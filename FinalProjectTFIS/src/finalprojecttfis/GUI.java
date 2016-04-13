@@ -18,6 +18,9 @@ public class GUI extends javax.swing.JFrame {
         initComponents();
     }
 
+    String currentPlay;
+    String currentPlayer; //nombre del Jugador 2 en el array
+     int playerIterator;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -372,138 +375,20 @@ public class GUI extends javax.swing.JFrame {
     private void BotonJugador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugador1ActionPerformed
         // TODO add your handling code here:
         currentPlayer = jugadores[0].toString(); //Se extrae el nombre del jugador
-        scoreIterator = 0; //Posicion del player 1.
+        playerIterator = 0; //Posicion del player 1.
         System.out.println(currentPlayer);//Se imprime a consola el player seleccionado
     }//GEN-LAST:event_BotonJugador1ActionPerformed
 
     private void BotonJugador2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugador2ActionPerformed
         // TODO add your handling code here:
         currentPlayer = jugadores[1].toString(); //nombre del Jugador 2 en el array
-        scoreIterator = 1; //Posicion del jugador 2 en el array
+        playerIterator = 1; //Posicion del jugador 2 en el array
         System.out.println(currentPlayer);
     }//GEN-LAST:event_BotonJugador2ActionPerformed
 
     private void agregarJugadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarJugadaActionPerformed
         // TODO add your handling code here:
-        jLabel28.setText(Integer.toString(set + 1)); //Label que muestra el set que se esta jugando en ese instante.
-        int oponent = (scoreIterator + 1) % 2; //Esta cariable sirve para determinar el oponente del jugador seleccionado. Retorna 0 si es 1. Retorna 1 si es 0.
-        Boolean deuceWinner = false; //Este booleano se utiliza para verificar si el jugador gano el deuce.
-
-        if (jugadores[scoreIterator].score[set] == 6 && jugadores[oponent].score[set] == 6)//Caso del Tie break.
-        {
-            status = "Tie Break";
-            System.out.println("Tie break");
-            listData[listIterator++] = "Tie break";
-            playerScore[scoreIterator]++;
-            if (playerScore[scoreIterator] >= 7) {
-                if (Math.abs(playerScore[scoreIterator] - playerScore[oponent]) >= 2) {
-                    jugadores[scoreIterator].score[set]++;
-                    playerScore[scoreIterator] = 0;
-                    playerScore[oponent] = 0;
-                    listData[listIterator++] = "Gana el tie break el" + jugadores[scoreIterator].toString();
-                    set++;
-                    playerSets[scoreIterator]++;
-                    status = "Partida Normal";
-                }
-            }
-        } else { //Si no hay Tie break, entonces sigue la jugada normal.
-            if (set <= 3 && game) {
-
-                if (playerScore[scoreIterator] == 0) { //Actualiza el score
-                    playerScore[scoreIterator] = 15;
-                } else if (playerScore[scoreIterator] == 15) {//Actualiza el score
-                    playerScore[scoreIterator] = 30;
-                } else if (playerScore[scoreIterator] == 30) {//Actualiza el score
-                    playerScore[scoreIterator] = 40;//Esta excepcion se utiliza para que cuando un jugador gane un Deuce, se imprima primero la jugada y luego que gano el deuce.
-                    listData[listIterator++] = (currentPlayer + ", " + currentPlay + ", Set:" + Integer.toString(set + 1) + ", Score:" + Integer.toString(playerScore[scoreIterator]));
-                    if (playerScore[scoreIterator] == playerScore[oponent]) { //Si ambos tienen 40 y 40 de score, entran en deuce.
-                        status = "Deuce";
-                        listData[listIterator++] = "Deuce"; //Se imprime deuce en la lista
-                    }
-                } else if (playerScore[scoreIterator] == 40) {
-
-                    if (playerScore[scoreIterator] != playerScore[oponent]) //No hay deuce
-                    {
-                        playerScore[scoreIterator] = 0;
-                        jugadores[scoreIterator].score[set]++; //Se sube el score ya que alcanzo los 40 puntos y 1 mas.
-                        System.out.println("Hace un game el " + jugadores[scoreIterator].toString());
-                        listData[listIterator++] = "Hace un game el " + jugadores[scoreIterator].toString();
-                    } else //Si hay deuce entonces...
-                    {
-                        //Se imprime el score del deuce.
-                        listData[listIterator++] = (currentPlayer + ", " + currentPlay + ", Set:" + Integer.toString(set + 1) + ", Score:" + Integer.toString(advanceArr[scoreIterator] + 1));
-                        status = "Deuce";
-                        advanceArr[scoreIterator]++; //Se suma score al jugador correspondiente
-                        if (Math.abs(advanceArr[scoreIterator] - advanceArr[oponent]) < 2) //Si aun nadie tiene ventaja de dos
-                        {
-
-                            if (advanceArr[scoreIterator] == advanceArr[oponent]) //si se empata adv con adv, se resetea el AdvanceArr
-                            {
-                                advanceArr[scoreIterator] = 0;
-                                advanceArr[oponent] = 0;
-                                System.out.println("Se empato el deuce");
-                                listData[listIterator++] = "Se empato el deuce";
-                            }
-                        } else {
-                            playerScore[scoreIterator] = 0;
-                            playerScore[oponent] = 0;
-
-                            jugadores[scoreIterator].score[set]++;
-
-                        }
-                        if (Math.abs(advanceArr[scoreIterator] - advanceArr[oponent]) == 2) { //si alguien tiene ventaja de 2. Gana el deuce
-                            System.out.println("score " + jugadores[scoreIterator].toString() + jugadores[scoreIterator].score[set]);
-                            deuceWinner = true;
-                            setTableText();
-                            advanceArr[scoreIterator] = 0; //Se resetea el array para un proximo deuce.
-                            advanceArr[oponent] = 0; //Se resetea el array para un proximo deuce.
-                            status = "Partida Normal";
-                        }
-
-                    }
-
-                }
-
-            }
-            if (jugadores[scoreIterator].score[set] == 7) //Caso en el que esta 6 a 5. Se necesitan 7 puntos para ganar
-            {
-                System.out.println(" jugador tiene 7 y otro 5");
-                set++;
-                playerSets[scoreIterator]++;
-            } else if (jugadores[scoreIterator].score[set] == 6 && jugadores[oponent].score[set] <= 4) {
-                //Si un player alcanza 6 y el otro tiene 4 o menos games entonces este gana el set
-                //gana el set el jugador que hizo la jugada
-                System.out.println(" 6 y menor que 4");
-                set++;
-                playerSets[scoreIterator]++;
-            }
-
-            System.out.println(playerScore[scoreIterator]);
-            listaHistorial.setVisible(true);
-            if (playerScore[scoreIterator] != 0 && playerScore[scoreIterator] != 40) {
-                listData[listIterator++] = (currentPlayer + ", " + currentPlay + ", Set:" + Integer.toString(set + 1) + ", Score:" + Integer.toString(playerScore[scoreIterator]));
-            }
-            if (deuceWinner == true) { //Si alguien gano el deuce(en caso de haber ocurrido). Se imprime quien lo gano.
-                System.out.println("Gana el deuce el " + jugadores[scoreIterator].toString());
-                listData[listIterator++] = "Gana el deuce el " + jugadores[scoreIterator].toString();
-                deuceWinner = false;
-            }
-
-            listaHistorial.setListData(listData); //Se actualiza el historial de jugadas con las nuevas jugadas.
-
-            setTableText(); //Se actualizan los labels de la tabla de score.
-
-        }
-        if (playerSets[scoreIterator] >= 2 && game) { //Si un jugador tiene mas de 2 sets de 3, este gana la partida.
-            System.out.println("Gana el partido el " + jugadores[scoreIterator].toString());
-            listData[listIterator++] = "Gana el Partido el " + jugadores[scoreIterator].toString();
-            game = false;
-            status = ("Ganador : " + jugadores[scoreIterator].toString());
-            JOptionPane.showMessageDialog(null, "Gana el Partido el " + jugadores[scoreIterator].toString()); //Aviso de que un jugador gano la partida.
-
-        }
-        statusLabel.setText(status); //Se actualiza el status al correspondiente segun lo que haya pasado en la jugada.
-        setTableText();//Se actualizan los labels de la tabla de score.
+       
     }//GEN-LAST:event_agregarJugadaActionPerformed
 
     /**
