@@ -22,26 +22,7 @@ import java.util.logging.Logger;
  *
  * @author Adalberto
  */
-public class ManejoTxt {
-    String documentName;
-    public void leerHistorialActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        // TODO add your handling code here:
-        //Se lee el historial si existe con testToArray(). Si no existe lanza un mensaje de que no la encontro.
-        String[] emptyArr = {"No existe un historial anterior."};
-        historialAnterior.setListData(emptyArr);
-        historialAnterior.setVisible(true);
-        try {
-            String[] str = textToArray();
-            historialAnterior.setListData(str);
-        } catch (FileNotFoundException ex) {
-            
-            Logger.getLogger(InterfazGrafica.class.getName()).log(Level.SEVERE, null, ex);
-            
-            
-        }
-
-
-    }                                             
+public class ManejoTxt {                                  
 
     public void arrayToText(String[] arr) throws IOException {
         // Itera el arreglo para grabarlo linea por linea en el txt.
