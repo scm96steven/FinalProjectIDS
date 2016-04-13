@@ -170,7 +170,7 @@ public class PantallaInicial extends javax.swing.JFrame {
         GUI gn = new GUI();
         gn.setVisible(true);
         dispose();
-       
+        Jugador[] jugadores = createPlayers();
         
         
         
@@ -258,7 +258,10 @@ public class PantallaInicial extends javax.swing.JFrame {
                 
             Jugador player1 = new Jugador(player1Name);    
             Jugador player2 = new Jugador(player2Name);  
+            
+            Jugador[] jugadores = {player1, player2};
           
+            return jugadores;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

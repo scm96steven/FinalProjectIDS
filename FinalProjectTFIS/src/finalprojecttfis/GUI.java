@@ -27,21 +27,484 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        BotonJugada9 = new javax.swing.JRadioButton();
+        BotonJugador1 = new javax.swing.JRadioButton();
+        BotonJugada8 = new javax.swing.JRadioButton();
+        BotonJugador2 = new javax.swing.JRadioButton();
+        BotonJugada7 = new javax.swing.JRadioButton();
+        agregarJugada = new javax.swing.JButton();
+        BotonJugada6 = new javax.swing.JRadioButton();
+        BotonJugada5 = new javax.swing.JRadioButton();
+        BotonJugada4 = new javax.swing.JRadioButton();
+        BotonJugada3 = new javax.swing.JRadioButton();
+        BotonJugada2 = new javax.swing.JRadioButton();
+        BotonJugada1 = new javax.swing.JRadioButton();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        listaJugadas = new javax.swing.JList<>();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 891, Short.MAX_VALUE)
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
+        jLabel3.setText("Jugada:");
+
+        jLabel2.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
+        jLabel2.setText("Seleccione jugador:");
+
+        BotonJugada9.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        BotonJugada9.setText("Slice");
+        BotonJugada9.setOpaque(false);
+        BotonJugada9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonJugada9ActionPerformed(evt);
+            }
+        });
+
+        BotonJugador1.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        BotonJugador1.setText("Jugador 1");
+        BotonJugador1.setOpaque(false);
+        BotonJugador1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonJugador1ActionPerformed(evt);
+            }
+        });
+
+        BotonJugada8.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        BotonJugada8.setText("Globo");
+        BotonJugada8.setOpaque(false);
+        BotonJugada8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonJugada8ActionPerformed(evt);
+            }
+        });
+
+        BotonJugador2.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        BotonJugador2.setText("Jugador 2");
+        BotonJugador2.setOpaque(false);
+        BotonJugador2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonJugador2ActionPerformed(evt);
+            }
+        });
+
+        BotonJugada7.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        BotonJugada7.setText("Remate o Smash");
+        BotonJugada7.setOpaque(false);
+        BotonJugada7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonJugada7ActionPerformed(evt);
+            }
+        });
+
+        agregarJugada.setBackground(new java.awt.Color(204, 204, 204));
+        agregarJugada.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
+        agregarJugada.setText("Agregar jugada");
+        agregarJugada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarJugadaActionPerformed(evt);
+            }
+        });
+
+        BotonJugada6.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        BotonJugada6.setText("Contradejada");
+        BotonJugada6.setOpaque(false);
+        BotonJugada6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonJugada6ActionPerformed(evt);
+            }
+        });
+
+        BotonJugada5.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        BotonJugada5.setText("Dejada");
+        BotonJugada5.setOpaque(false);
+        BotonJugada5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonJugada5ActionPerformed(evt);
+            }
+        });
+
+        BotonJugada4.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        BotonJugada4.setText("Reves");
+        BotonJugada4.setOpaque(false);
+        BotonJugada4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonJugada4ActionPerformed(evt);
+            }
+        });
+
+        BotonJugada3.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        BotonJugada3.setText("Volea");
+        BotonJugada3.setOpaque(false);
+        BotonJugada3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonJugada3ActionPerformed(evt);
+            }
+        });
+
+        BotonJugada2.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        BotonJugada2.setText("Derecha o drive");
+        BotonJugada2.setOpaque(false);
+        BotonJugada2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonJugada2ActionPerformed(evt);
+            }
+        });
+
+        BotonJugada1.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        BotonJugada1.setText("Saque");
+        BotonJugada1.setOpaque(false);
+        BotonJugada1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonJugada1ActionPerformed(evt);
+            }
+        });
+
+        jLabel22.setFont(new java.awt.Font("Rockwell Condensed", 1, 15)); // NOI18N
+        jLabel22.setText("Status:");
+
+        jLabel27.setFont(new java.awt.Font("Rockwell Condensed", 1, 15)); // NOI18N
+        jLabel27.setText("Set:");
+
+        jLabel23.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
+        jLabel23.setText("Tabla de scores:");
+
+        listaJugadas.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(listaJugadas);
+
+        jLabel1.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
+        jLabel1.setText("Historial de Jugadas:");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BotonJugador1)
+                    .addComponent(BotonJugador2)
+                    .addComponent(jLabel3)
+                    .addComponent(BotonJugada2)
+                    .addComponent(BotonJugada3)
+                    .addComponent(BotonJugada9)
+                    .addComponent(BotonJugada1)
+                    .addComponent(BotonJugada4)
+                    .addComponent(agregarJugada)
+                    .addComponent(BotonJugada5)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(133, 133, 133)
+                        .addComponent(jLabel23))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BotonJugada7)
+                            .addComponent(BotonJugada6)
+                            .addComponent(BotonJugada8))
+                        .addGap(122, 122, 122)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel27)
+                            .addComponent(jLabel22))))
+                .addGap(28, 206, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 498, Short.MAX_VALUE)
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel23))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BotonJugador1)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(BotonJugador2)))
+                        .addGap(7, 7, 7)
+                        .addComponent(jLabel3)
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(80, 80, 80)
+                                .addComponent(BotonJugada5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(BotonJugada2))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addComponent(BotonJugada3))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(100, 100, 100)
+                                .addComponent(BotonJugada6))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(160, 160, 160)
+                                .addComponent(BotonJugada9))
+                            .addComponent(BotonJugada1)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(118, 118, 118)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(BotonJugada7)
+                                    .addComponent(jLabel27)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(139, 139, 139)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(BotonJugada8)
+                                    .addComponent(jLabel22)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addComponent(BotonJugada4)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(agregarJugada)))
+                .addContainerGap(228, Short.MAX_VALUE))
         );
+
+        jTabbedPane1.addTab("Anotar Jugada", jPanel2);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 958, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 668, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Consultar historial anterior", jPanel3);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 963, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 696, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BotonJugada9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada9ActionPerformed
+        // TODO add your handling code here:
+        currentPlay = "Slice";
+        System.out.println(currentPlay);
+    }//GEN-LAST:event_BotonJugada9ActionPerformed
+
+    private void BotonJugada8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada8ActionPerformed
+        // TODO add your handling code here:
+        currentPlay = "Globo";
+        System.out.println(currentPlay);
+    }//GEN-LAST:event_BotonJugada8ActionPerformed
+
+    private void BotonJugada7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada7ActionPerformed
+        // TODO add your handling code here:
+        currentPlay = "Remate";
+        System.out.println(currentPlay);
+    }//GEN-LAST:event_BotonJugada7ActionPerformed
+
+    private void BotonJugada6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada6ActionPerformed
+        // TODO add your handling code here:
+        currentPlay = "Contra Dejada";
+        System.out.println(currentPlay);
+    }//GEN-LAST:event_BotonJugada6ActionPerformed
+
+    private void BotonJugada5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada5ActionPerformed
+        // TODO add your handling code here:
+        currentPlay = "Dejada";
+        System.out.println(currentPlay);
+    }//GEN-LAST:event_BotonJugada5ActionPerformed
+
+    private void BotonJugada4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada4ActionPerformed
+        // TODO add your handling code here:
+        currentPlay = "Reves";
+        System.out.println(currentPlay);
+    }//GEN-LAST:event_BotonJugada4ActionPerformed
+
+    private void BotonJugada3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada3ActionPerformed
+        // TODO add your handling code here:
+        currentPlay = "Volea";
+        System.out.println(currentPlay);
+    }//GEN-LAST:event_BotonJugada3ActionPerformed
+
+    private void BotonJugada2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada2ActionPerformed
+        // TODO add your handling code here:
+        currentPlay = "Derecha";
+        System.out.println(currentPlay);
+    }//GEN-LAST:event_BotonJugada2ActionPerformed
+
+    private void BotonJugada1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada1ActionPerformed
+        // TODO add your handling code here:
+        //Cada vez que se selecciona una jugada se almacena su nombre en currentPlay para imprimirlo al historial. Igual para las demas juagdas debajo.
+        currentPlay = "Saque";
+        System.out.println(currentPlay);
+    }//GEN-LAST:event_BotonJugada1ActionPerformed
+
+    private void BotonJugador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugador1ActionPerformed
+        // TODO add your handling code here:
+        currentPlayer = jugadores[0].toString(); //Se extrae el nombre del jugador
+        scoreIterator = 0; //Posicion del player 1.
+        System.out.println(currentPlayer);//Se imprime a consola el player seleccionado
+    }//GEN-LAST:event_BotonJugador1ActionPerformed
+
+    private void BotonJugador2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugador2ActionPerformed
+        // TODO add your handling code here:
+        currentPlayer = jugadores[1].toString(); //nombre del Jugador 2 en el array
+        scoreIterator = 1; //Posicion del jugador 2 en el array
+        System.out.println(currentPlayer);
+    }//GEN-LAST:event_BotonJugador2ActionPerformed
+
+    private void agregarJugadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarJugadaActionPerformed
+        // TODO add your handling code here:
+        jLabel28.setText(Integer.toString(set + 1)); //Label que muestra el set que se esta jugando en ese instante.
+        int oponent = (scoreIterator + 1) % 2; //Esta cariable sirve para determinar el oponente del jugador seleccionado. Retorna 0 si es 1. Retorna 1 si es 0.
+        Boolean deuceWinner = false; //Este booleano se utiliza para verificar si el jugador gano el deuce.
+
+        if (jugadores[scoreIterator].score[set] == 6 && jugadores[oponent].score[set] == 6)//Caso del Tie break.
+        {
+            status = "Tie Break";
+            System.out.println("Tie break");
+            listData[listIterator++] = "Tie break";
+            playerScore[scoreIterator]++;
+            if (playerScore[scoreIterator] >= 7) {
+                if (Math.abs(playerScore[scoreIterator] - playerScore[oponent]) >= 2) {
+                    jugadores[scoreIterator].score[set]++;
+                    playerScore[scoreIterator] = 0;
+                    playerScore[oponent] = 0;
+                    listData[listIterator++] = "Gana el tie break el" + jugadores[scoreIterator].toString();
+                    set++;
+                    playerSets[scoreIterator]++;
+                    status = "Partida Normal";
+                }
+            }
+        } else { //Si no hay Tie break, entonces sigue la jugada normal.
+            if (set <= 3 && game) {
+
+                if (playerScore[scoreIterator] == 0) { //Actualiza el score
+                    playerScore[scoreIterator] = 15;
+                } else if (playerScore[scoreIterator] == 15) {//Actualiza el score
+                    playerScore[scoreIterator] = 30;
+                } else if (playerScore[scoreIterator] == 30) {//Actualiza el score
+                    playerScore[scoreIterator] = 40;//Esta excepcion se utiliza para que cuando un jugador gane un Deuce, se imprima primero la jugada y luego que gano el deuce.
+                    listData[listIterator++] = (currentPlayer + ", " + currentPlay + ", Set:" + Integer.toString(set + 1) + ", Score:" + Integer.toString(playerScore[scoreIterator]));
+                    if (playerScore[scoreIterator] == playerScore[oponent]) { //Si ambos tienen 40 y 40 de score, entran en deuce.
+                        status = "Deuce";
+                        listData[listIterator++] = "Deuce"; //Se imprime deuce en la lista
+                    }
+                } else if (playerScore[scoreIterator] == 40) {
+
+                    if (playerScore[scoreIterator] != playerScore[oponent]) //No hay deuce
+                    {
+                        playerScore[scoreIterator] = 0;
+                        jugadores[scoreIterator].score[set]++; //Se sube el score ya que alcanzo los 40 puntos y 1 mas.
+                        System.out.println("Hace un game el " + jugadores[scoreIterator].toString());
+                        listData[listIterator++] = "Hace un game el " + jugadores[scoreIterator].toString();
+                    } else //Si hay deuce entonces...
+                    {
+                        //Se imprime el score del deuce.
+                        listData[listIterator++] = (currentPlayer + ", " + currentPlay + ", Set:" + Integer.toString(set + 1) + ", Score:" + Integer.toString(advanceArr[scoreIterator] + 1));
+                        status = "Deuce";
+                        advanceArr[scoreIterator]++; //Se suma score al jugador correspondiente
+                        if (Math.abs(advanceArr[scoreIterator] - advanceArr[oponent]) < 2) //Si aun nadie tiene ventaja de dos
+                        {
+
+                            if (advanceArr[scoreIterator] == advanceArr[oponent]) //si se empata adv con adv, se resetea el AdvanceArr
+                            {
+                                advanceArr[scoreIterator] = 0;
+                                advanceArr[oponent] = 0;
+                                System.out.println("Se empato el deuce");
+                                listData[listIterator++] = "Se empato el deuce";
+                            }
+                        } else {
+                            playerScore[scoreIterator] = 0;
+                            playerScore[oponent] = 0;
+
+                            jugadores[scoreIterator].score[set]++;
+
+                        }
+                        if (Math.abs(advanceArr[scoreIterator] - advanceArr[oponent]) == 2) { //si alguien tiene ventaja de 2. Gana el deuce
+                            System.out.println("score " + jugadores[scoreIterator].toString() + jugadores[scoreIterator].score[set]);
+                            deuceWinner = true;
+                            setTableText();
+                            advanceArr[scoreIterator] = 0; //Se resetea el array para un proximo deuce.
+                            advanceArr[oponent] = 0; //Se resetea el array para un proximo deuce.
+                            status = "Partida Normal";
+                        }
+
+                    }
+
+                }
+
+            }
+            if (jugadores[scoreIterator].score[set] == 7) //Caso en el que esta 6 a 5. Se necesitan 7 puntos para ganar
+            {
+                System.out.println(" jugador tiene 7 y otro 5");
+                set++;
+                playerSets[scoreIterator]++;
+            } else if (jugadores[scoreIterator].score[set] == 6 && jugadores[oponent].score[set] <= 4) {
+                //Si un player alcanza 6 y el otro tiene 4 o menos games entonces este gana el set
+                //gana el set el jugador que hizo la jugada
+                System.out.println(" 6 y menor que 4");
+                set++;
+                playerSets[scoreIterator]++;
+            }
+
+            System.out.println(playerScore[scoreIterator]);
+            listaHistorial.setVisible(true);
+            if (playerScore[scoreIterator] != 0 && playerScore[scoreIterator] != 40) {
+                listData[listIterator++] = (currentPlayer + ", " + currentPlay + ", Set:" + Integer.toString(set + 1) + ", Score:" + Integer.toString(playerScore[scoreIterator]));
+            }
+            if (deuceWinner == true) { //Si alguien gano el deuce(en caso de haber ocurrido). Se imprime quien lo gano.
+                System.out.println("Gana el deuce el " + jugadores[scoreIterator].toString());
+                listData[listIterator++] = "Gana el deuce el " + jugadores[scoreIterator].toString();
+                deuceWinner = false;
+            }
+
+            listaHistorial.setListData(listData); //Se actualiza el historial de jugadas con las nuevas jugadas.
+
+            setTableText(); //Se actualizan los labels de la tabla de score.
+
+        }
+        if (playerSets[scoreIterator] >= 2 && game) { //Si un jugador tiene mas de 2 sets de 3, este gana la partida.
+            System.out.println("Gana el partido el " + jugadores[scoreIterator].toString());
+            listData[listIterator++] = "Gana el Partido el " + jugadores[scoreIterator].toString();
+            game = false;
+            status = ("Ganador : " + jugadores[scoreIterator].toString());
+            JOptionPane.showMessageDialog(null, "Gana el Partido el " + jugadores[scoreIterator].toString()); //Aviso de que un jugador gano la partida.
+
+        }
+        statusLabel.setText(status); //Se actualiza el status al correspondiente segun lo que haya pasado en la jugada.
+        setTableText();//Se actualizan los labels de la tabla de score.
+    }//GEN-LAST:event_agregarJugadaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,5 +543,29 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton BotonJugada1;
+    private javax.swing.JRadioButton BotonJugada2;
+    private javax.swing.JRadioButton BotonJugada3;
+    private javax.swing.JRadioButton BotonJugada4;
+    private javax.swing.JRadioButton BotonJugada5;
+    private javax.swing.JRadioButton BotonJugada6;
+    private javax.swing.JRadioButton BotonJugada7;
+    private javax.swing.JRadioButton BotonJugada8;
+    private javax.swing.JRadioButton BotonJugada9;
+    private javax.swing.JRadioButton BotonJugador1;
+    private javax.swing.JRadioButton BotonJugador2;
+    private javax.swing.JButton agregarJugada;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JList<String> listaJugadas;
     // End of variables declaration//GEN-END:variables
 }
