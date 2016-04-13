@@ -18,6 +18,11 @@ public class PantallaInicial extends javax.swing.JFrame {
         initComponents();
     }
 
+     int setSize = 3;
+     String player1Name;
+     String player2Name;
+     
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,38 +38,67 @@ public class PantallaInicial extends javax.swing.JFrame {
         player2tf = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        set3button = new javax.swing.JRadioButton();
+        set5button = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
         botonAceptar = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ventana1");
 
+        jLabel1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         jLabel1.setText("Inserte los nombres de los jugadores:");
 
-        player1tf.setText("jTextField1");
+        player1tf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player1tfActionPerformed(evt);
+            }
+        });
 
-        player2tf.setText("jTextField2");
+        player2tf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2tfActionPerformed(evt);
+            }
+        });
 
+        jLabel2.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
         jLabel2.setText("Jugador 1");
 
+        jLabel3.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
         jLabel3.setText("Jugador 2");
 
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setText("3 Sets");
+        buttonGroup1.add(set3button);
+        set3button.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
+        set3button.setText("3 Sets");
+        set3button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                set3buttonActionPerformed(evt);
+            }
+        });
 
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setText("5 Sets");
+        buttonGroup1.add(set5button);
+        set5button.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
+        set5button.setText("5 Sets");
+        set5button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                set5buttonActionPerformed(evt);
+            }
+        });
 
+        jLabel4.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
         jLabel4.setText("Elija la cantidad de sets:");
 
+        botonAceptar.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
         botonAceptar.setText("Aceptar");
         botonAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAceptarActionPerformed(evt);
             }
         });
+
+        jLabel5.setFont(new java.awt.Font("Rockwell Condensed", 1, 18)); // NOI18N
+        jLabel5.setText("¡Bienvenido a Tennis Scoring App!");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,51 +107,57 @@ public class PantallaInicial extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(62, 62, 62)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(player2tf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(player1tf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(player1tf, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                            .addComponent(player2tf)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(86, 86, 86)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton1)))
+                            .addComponent(set5button)
+                            .addComponent(set3button)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(95, 95, 95)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(botonAceptar)
-                            .addComponent(jLabel4))))
-                .addContainerGap(151, Short.MAX_VALUE))
+                        .addComponent(jLabel4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(jLabel5))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(170, 170, 170)
+                        .addComponent(botonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(133, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
+                .addGap(22, 22, 22)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(player1tf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(player2tf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(player1tf, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(player2tf, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton1)
+                .addComponent(set3button)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton2)
+                .addComponent(set5button)
                 .addGap(18, 18, 18)
                 .addComponent(botonAceptar)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -130,10 +170,52 @@ public class PantallaInicial extends javax.swing.JFrame {
         GUI gn = new GUI();
         gn.setVisible(true);
         dispose();
+       
         
         
         
     }//GEN-LAST:event_botonAceptarActionPerformed
+
+    private void set3buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_set3buttonActionPerformed
+
+        setSize = 3;
+        
+    }//GEN-LAST:event_set3buttonActionPerformed
+
+    private void set5buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_set5buttonActionPerformed
+        setSize = 5;
+    }//GEN-LAST:event_set5buttonActionPerformed
+
+    private void player1tfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player1tfActionPerformed
+      
+        
+        
+        
+         if(player1tf.getText()!="")
+         {
+        player1Name = player1tf.getText();
+         }
+        else
+         {
+               player1Name = "Jugador 1";
+         }
+         System.out.println(player1Name);
+        
+    }//GEN-LAST:event_player1tfActionPerformed
+
+    private void player2tfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2tfActionPerformed
+
+                 if(player2tf.getText()!="")
+                 {
+              player2Name = player2tf.getText();
+                 }
+                 else
+                 {
+                  player2Name = "Jugador 2";
+                 }
+                System.out.println(player2Name);
+                       
+    }//GEN-LAST:event_player2tfActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,9 +259,10 @@ public class PantallaInicial extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField player1tf;
     private javax.swing.JTextField player2tf;
+    private javax.swing.JRadioButton set3button;
+    private javax.swing.JRadioButton set5button;
     // End of variables declaration//GEN-END:variables
 }
