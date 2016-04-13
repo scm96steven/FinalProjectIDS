@@ -438,6 +438,17 @@ public class GUI extends javax.swing.JFrame {
             }
         });
     }
+    public void addPlay(){
+        int oponent = (playerIterator + 1) % 2;
+        Boolean deuceWinner = false;
+        
+        
+        if (Partida.jugadores[playerIterator].score[Partida.set] == 6 && Partida.jugadores[oponent].score[Partida.set] == 6){
+            Partida.status="Tie Break";
+            System.out.println("Tie break");
+            
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton BotonJugada1;

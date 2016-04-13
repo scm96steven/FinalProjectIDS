@@ -10,11 +10,11 @@ package finalprojecttfis;
  * @author Adalberto
  */
 public class Partida {
-    int sets;
+    int set=0;
     Jugador[] jugadores;
+    String status="normal";
     
-    public void Partida(Jugador[] players,int set){
-        sets=set;
+    public void Partida(Jugador[] players){
         jugadores=players;
     }
     
