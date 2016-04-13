@@ -188,32 +188,13 @@ public class PantallaInicial extends javax.swing.JFrame {
 
     private void player1tfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player1tfActionPerformed
       
-        
-        
-        
-         if(player1tf.getText()!="")
-         {
-        player1Name = player1tf.getText();
-         }
-        else
-         {
-               player1Name = "Jugador 1";
-         }
-         System.out.println(player1Name);
+
         
     }//GEN-LAST:event_player1tfActionPerformed
 
     private void player2tfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2tfActionPerformed
 
-                 if(player2tf.getText()!="")
-                 {
-              player2Name = player2tf.getText();
-                 }
-                 else
-                 {
-                  player2Name = "Jugador 2";
-                 }
-                System.out.println(player2Name);
+             
                        
     }//GEN-LAST:event_player2tfActionPerformed
 
@@ -250,6 +231,34 @@ public class PantallaInicial extends javax.swing.JFrame {
                 new PantallaInicial().setVisible(true);
             }
         });
+    }
+    
+    public Jugador[] createPlayers(){
+       //Se toma el nombre del jugador 1
+        if(player1tf.getText()!="")
+         {
+        player1Name = player1tf.getText();
+         }
+        else
+         {
+               player1Name = "Jugador 1";
+         }
+         System.out.println(player1Name);
+         
+         //Se toma nombre del jugador 2
+             if(player2tf.getText()!="")
+                 {
+              player2Name = player2tf.getText();
+                 }
+                 else
+                 {
+                  player2Name = "Jugador 2";
+                 }
+                System.out.println(player2Name);
+                
+            Jugador player1 = new Jugador(player1Name);    
+            Jugador player2 = new Jugador(player2Name);  
+          
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
