@@ -10,13 +10,15 @@ package finalprojecttfis;
  * @author Adalberto
  */
 public class Jugador {
-    int[] score;
+    int score[] =new int[5];
     String name;
     public Jugador(String s,int sets) {
-        for(int i=0;i<sets;i++){
+          name=s;
+        for(int i=0;i<sets;i++)
+        {
             score[i]=0;
         }
-        name=s;
+     
     }
 
     

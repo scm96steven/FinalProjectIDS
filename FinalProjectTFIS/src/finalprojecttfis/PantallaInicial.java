@@ -16,6 +16,8 @@ public class PantallaInicial extends javax.swing.JFrame {
      */
     public PantallaInicial() {
         initComponents();
+
+        set3button.setSelected(true);
     }
 
      int setSize = 3;
@@ -167,12 +169,12 @@ public class PantallaInicial extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         
-        GUI gn = new GUI();
-        gn.setVisible(true);
-        dispose();
+        
         Jugador[] jugadores = createPlayers();
         
-        
+        GUI gn = new GUI(jugadores);
+        gn.setVisible(true);
+        dispose();
         
     }//GEN-LAST:event_botonAceptarActionPerformed
 
@@ -235,7 +237,7 @@ public class PantallaInicial extends javax.swing.JFrame {
     
     public Jugador[] createPlayers(){
        //Se toma el nombre del jugador 1
-        if(player1tf.getText()!="")
+        if(!player1tf.getText().equals(""))
          {
         player1Name = player1tf.getText();
          }
@@ -246,7 +248,7 @@ public class PantallaInicial extends javax.swing.JFrame {
          System.out.println(player1Name);
          
          //Se toma nombre del jugador 2
-             if(player2tf.getText()!="")
+             if(!player2tf.getText().equals(""))
                  {
               player2Name = player2tf.getText();
                  }
@@ -256,12 +258,12 @@ public class PantallaInicial extends javax.swing.JFrame {
                  }
                 System.out.println(player2Name);
                 
-            Jugador player1 = new Jugador(player1Name);    
-            Jugador player2 = new Jugador(player2Name);  
+            Jugador player1 = new Jugador(player1Name, setSize);    
+            Jugador player2 = new Jugador(player2Name, setSize);  
             
-            Jugador[] jugadores = {player1, player2};
+            Jugador[] playersArr = {player1, player2};
           
-            return jugadores;
+            return playersArr;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

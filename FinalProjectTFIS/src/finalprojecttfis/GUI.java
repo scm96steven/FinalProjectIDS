@@ -14,13 +14,25 @@ public class GUI extends javax.swing.JFrame {
     /**
      * Creates new form GUI1
      */
-    public GUI() {
+    Jugador[] jugadores;
+    
+    
+    
+    
+    public GUI(Jugador[] players) {
         initComponents();
+         setSize(1000, 530);
+         listaJugadas.setVisible(false);
+         BotonJugada1.setSelected(true);
+        BotonJugador1.setSelected(true);
+      jugadores = players;
+      
     }
 
     String currentPlay;
     String currentPlayer; //nombre del Jugador 2 en el array
      int playerIterator;
+  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,6 +42,8 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        playersButtonGroup = new javax.swing.ButtonGroup();
+        playsButtonGroup = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
@@ -56,7 +70,7 @@ public class GUI extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(null);
 
         jLabel3.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
         jLabel3.setText("Jugada:");
@@ -64,6 +78,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
         jLabel2.setText("Seleccione jugador:");
 
+        playsButtonGroup.add(BotonJugada9);
         BotonJugada9.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         BotonJugada9.setText("Slice");
         BotonJugada9.setOpaque(false);
@@ -73,6 +88,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        playersButtonGroup.add(BotonJugador1);
         BotonJugador1.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         BotonJugador1.setText("Jugador 1");
         BotonJugador1.setOpaque(false);
@@ -82,6 +98,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        playsButtonGroup.add(BotonJugada8);
         BotonJugada8.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         BotonJugada8.setText("Globo");
         BotonJugada8.setOpaque(false);
@@ -91,6 +108,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        playersButtonGroup.add(BotonJugador2);
         BotonJugador2.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         BotonJugador2.setText("Jugador 2");
         BotonJugador2.setOpaque(false);
@@ -100,6 +118,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        playsButtonGroup.add(BotonJugada7);
         BotonJugada7.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         BotonJugada7.setText("Remate o Smash");
         BotonJugada7.setOpaque(false);
@@ -118,6 +137,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        playsButtonGroup.add(BotonJugada6);
         BotonJugada6.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         BotonJugada6.setText("Contradejada");
         BotonJugada6.setOpaque(false);
@@ -127,6 +147,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        playsButtonGroup.add(BotonJugada5);
         BotonJugada5.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         BotonJugada5.setText("Dejada");
         BotonJugada5.setOpaque(false);
@@ -136,6 +157,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        playsButtonGroup.add(BotonJugada4);
         BotonJugada4.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         BotonJugada4.setText("Reves");
         BotonJugada4.setOpaque(false);
@@ -145,6 +167,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        playsButtonGroup.add(BotonJugada3);
         BotonJugada3.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         BotonJugada3.setText("Volea");
         BotonJugada3.setOpaque(false);
@@ -154,6 +177,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        playsButtonGroup.add(BotonJugada2);
         BotonJugada2.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         BotonJugada2.setText("Derecha o drive");
         BotonJugada2.setOpaque(false);
@@ -163,6 +187,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        playsButtonGroup.add(BotonJugada1);
         BotonJugada1.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         BotonJugada1.setText("Saque");
         BotonJugada1.setOpaque(false);
@@ -221,7 +246,7 @@ public class GUI extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel27)
                             .addComponent(jLabel22))))
-                .addGap(28, 206, Short.MAX_VALUE)
+                .addGap(28, 234, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -279,7 +304,7 @@ public class GUI extends javax.swing.JFrame {
                                 .addComponent(BotonJugada4)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(agregarJugada)))
-                .addContainerGap(228, Short.MAX_VALUE))
+                .addGap(0, 228, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Anotar Jugada", jPanel2);
@@ -288,7 +313,7 @@ public class GUI extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 958, Short.MAX_VALUE)
+            .addGap(0, 986, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -297,73 +322,13 @@ public class GUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Consultar historial anterior", jPanel3);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 963, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 696, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jPanel1.add(jTabbedPane1);
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 1001, 696);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void BotonJugada9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada9ActionPerformed
-        // TODO add your handling code here:
-        currentPlay = "Slice";
-        System.out.println(currentPlay);
-    }//GEN-LAST:event_BotonJugada9ActionPerformed
-
-    private void BotonJugada8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada8ActionPerformed
-        // TODO add your handling code here:
-        currentPlay = "Globo";
-        System.out.println(currentPlay);
-    }//GEN-LAST:event_BotonJugada8ActionPerformed
-
-    private void BotonJugada7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada7ActionPerformed
-        // TODO add your handling code here:
-        currentPlay = "Remate";
-        System.out.println(currentPlay);
-    }//GEN-LAST:event_BotonJugada7ActionPerformed
-
-    private void BotonJugada6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada6ActionPerformed
-        // TODO add your handling code here:
-        currentPlay = "Contra Dejada";
-        System.out.println(currentPlay);
-    }//GEN-LAST:event_BotonJugada6ActionPerformed
-
-    private void BotonJugada5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada5ActionPerformed
-        // TODO add your handling code here:
-        currentPlay = "Dejada";
-        System.out.println(currentPlay);
-    }//GEN-LAST:event_BotonJugada5ActionPerformed
-
-    private void BotonJugada4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada4ActionPerformed
-        // TODO add your handling code here:
-        currentPlay = "Reves";
-        System.out.println(currentPlay);
-    }//GEN-LAST:event_BotonJugada4ActionPerformed
-
-    private void BotonJugada3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada3ActionPerformed
-        // TODO add your handling code here:
-        currentPlay = "Volea";
-        System.out.println(currentPlay);
-    }//GEN-LAST:event_BotonJugada3ActionPerformed
-
-    private void BotonJugada2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada2ActionPerformed
-        // TODO add your handling code here:
-        currentPlay = "Derecha";
-        System.out.println(currentPlay);
-    }//GEN-LAST:event_BotonJugada2ActionPerformed
 
     private void BotonJugada1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada1ActionPerformed
         // TODO add your handling code here:
@@ -372,12 +337,45 @@ public class GUI extends javax.swing.JFrame {
         System.out.println(currentPlay);
     }//GEN-LAST:event_BotonJugada1ActionPerformed
 
-    private void BotonJugador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugador1ActionPerformed
+    private void BotonJugada2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada2ActionPerformed
         // TODO add your handling code here:
-        currentPlayer = jugadores[0].toString(); //Se extrae el nombre del jugador
-        playerIterator = 0; //Posicion del player 1.
-        System.out.println(currentPlayer);//Se imprime a consola el player seleccionado
-    }//GEN-LAST:event_BotonJugador1ActionPerformed
+        currentPlay = "Derecha";
+        System.out.println(currentPlay);
+    }//GEN-LAST:event_BotonJugada2ActionPerformed
+
+    private void BotonJugada3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada3ActionPerformed
+        // TODO add your handling code here:
+        currentPlay = "Volea";
+        System.out.println(currentPlay);
+    }//GEN-LAST:event_BotonJugada3ActionPerformed
+
+    private void BotonJugada4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada4ActionPerformed
+        // TODO add your handling code here:
+        currentPlay = "Reves";
+        System.out.println(currentPlay);
+    }//GEN-LAST:event_BotonJugada4ActionPerformed
+
+    private void BotonJugada5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada5ActionPerformed
+        // TODO add your handling code here:
+        currentPlay = "Dejada";
+        System.out.println(currentPlay);
+    }//GEN-LAST:event_BotonJugada5ActionPerformed
+
+    private void BotonJugada6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada6ActionPerformed
+        // TODO add your handling code here:
+        currentPlay = "Contra Dejada";
+        System.out.println(currentPlay);
+    }//GEN-LAST:event_BotonJugada6ActionPerformed
+
+    private void agregarJugadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarJugadaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_agregarJugadaActionPerformed
+
+    private void BotonJugada7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada7ActionPerformed
+        // TODO add your handling code here:
+        currentPlay = "Remate";
+        System.out.println(currentPlay);
+    }//GEN-LAST:event_BotonJugada7ActionPerformed
 
     private void BotonJugador2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugador2ActionPerformed
         // TODO add your handling code here:
@@ -386,15 +384,29 @@ public class GUI extends javax.swing.JFrame {
         System.out.println(currentPlayer);
     }//GEN-LAST:event_BotonJugador2ActionPerformed
 
-    private void agregarJugadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarJugadaActionPerformed
+    private void BotonJugada8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada8ActionPerformed
         // TODO add your handling code here:
-       
-    }//GEN-LAST:event_agregarJugadaActionPerformed
+        currentPlay = "Globo";
+        System.out.println(currentPlay);
+    }//GEN-LAST:event_BotonJugada8ActionPerformed
+
+    private void BotonJugador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugador1ActionPerformed
+        // TODO add your handling code here:
+        currentPlayer = jugadores[0].toString(); //Se extrae el nombre del jugador
+        playerIterator = 0; //Posicion del player 1.
+        System.out.println(currentPlayer);//Se imprime a consola el player seleccionado
+    }//GEN-LAST:event_BotonJugador1ActionPerformed
+
+    private void BotonJugada9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada9ActionPerformed
+        // TODO add your handling code here:
+        currentPlay = "Slice";
+        System.out.println(currentPlay);
+    }//GEN-LAST:event_BotonJugada9ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -422,7 +434,7 @@ public class GUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GUI().setVisible(true);
+                new GUI(jugadores).setVisible(true);
             }
         });
     }
@@ -452,5 +464,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JList<String> listaJugadas;
+    private javax.swing.ButtonGroup playersButtonGroup;
+    private javax.swing.ButtonGroup playsButtonGroup;
     // End of variables declaration//GEN-END:variables
 }
