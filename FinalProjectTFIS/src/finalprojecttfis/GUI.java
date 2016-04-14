@@ -597,13 +597,8 @@ public class GUI extends javax.swing.JFrame {
 
     private void agregarJugadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarJugadaActionPerformed
         // TODO add your handling code here:
-<<<<<<< HEAD
         currentGame.addPlay(playerIterator, currentPlay);
-       currentGame.setTableText();
-=======
-     
-       currentGame.addPlay(playerIterator, currentPlay);
->>>>>>> origin/master
+       currentGame.tabla.setTableText();
     }//GEN-LAST:event_agregarJugadaActionPerformed
 
     private void BotonJugada7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada7ActionPerformed
