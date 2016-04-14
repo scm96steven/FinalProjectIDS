@@ -11,11 +11,20 @@ package finalprojecttfis;
  */
 public class Partida {
     int set=0;
+    int setsSize;
     Jugador[] jugadores;
     String status="normal";
+    String[] listData = new String[1000];
+    int listIterator = 0;
+    int[] playerScore = {0, 0}; //Esta variable almacena el score actual del jugador sea este 0, 15, 30, 40.
+    int[] advanceArr = {0, 0}; //Este array almacena los score en el Deuce.
+    int[] playerSets = {0, 0}; //Almacena cuantos sets tiene ganado cada jugador.
+    boolean game = true;
+    int scoreIterator = 0;
     
-    public void Partida(Jugador[] players){
+    public Partida(Jugador[] players, int size){
         jugadores=players;
+        setsSize=size;
     }
     
 }
