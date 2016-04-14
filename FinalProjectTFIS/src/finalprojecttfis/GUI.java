@@ -25,7 +25,7 @@ public class GUI extends javax.swing.JFrame {
     
     public  GUI() {
         initComponents();
-         setSize(1000, 530);
+         setSize(950, 495);
          listaJugadas.setVisible(false);
         
          BotonJugada1.setSelected(true);
@@ -33,6 +33,8 @@ public class GUI extends javax.swing.JFrame {
       jugadores = PantallaInicial.jugadores;
      player1Label.setText(jugadores[0].toString());
       player2Label.setText(jugadores[1].toString());
+      BotonJugador1.setText(jugadores[0].toString());
+       BotonJugador2.setText(jugadores[1].toString());
         System.out.println(PantallaInicial.setSize);
        currentGame = new Partida(jugadores,PantallaInicial.setSize);
  mt = new ManejoTxt();  
@@ -103,7 +105,9 @@ public class GUI extends javax.swing.JFrame {
         listaJugadas = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
         exitButton = new javax.swing.JButton();
+        setLabel = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tennis Scoring App 2.0 ");
@@ -234,7 +238,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(BotonJugador1);
-        BotonJugador1.setBounds(20, 130, 89, 23);
+        BotonJugador1.setBounds(20, 130, 160, 23);
 
         playersButtonGroup.add(BotonJugador2);
         BotonJugador2.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
@@ -246,7 +250,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(BotonJugador2);
-        BotonJugador2.setBounds(20, 150, 89, 23);
+        BotonJugador2.setBounds(20, 150, 170, 23);
 
         jLabel2.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
         jLabel2.setText("Seleccione jugador:");
@@ -267,17 +271,17 @@ public class GUI extends javax.swing.JFrame {
         jLabel22.setFont(new java.awt.Font("Rockwell Condensed", 1, 15)); // NOI18N
         jLabel22.setText("Status:");
         getContentPane().add(jLabel22);
-        jLabel22.setBounds(250, 370, 41, 19);
+        jLabel22.setBounds(360, 280, 41, 19);
 
         jLabel27.setFont(new java.awt.Font("Rockwell Condensed", 1, 15)); // NOI18N
         jLabel27.setText("Set:");
         getContentPane().add(jLabel27);
-        jLabel27.setBounds(250, 340, 22, 19);
+        jLabel27.setBounds(360, 260, 22, 19);
 
         statusLabel.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         statusLabel.setText("jLabel18");
         getContentPane().add(statusLabel);
-        statusLabel.setBounds(300, 370, 90, 19);
+        statusLabel.setBounds(410, 280, 180, 19);
 
         saveHistorialButton.setBackground(new java.awt.Color(204, 204, 204));
         saveHistorialButton.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
@@ -288,127 +292,127 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(saveHistorialButton);
-        saveHistorialButton.setBounds(700, 420, 140, 27);
+        saveHistorialButton.setBounds(660, 410, 140, 27);
 
         jLabel19.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
         jLabel19.setText("Adv.");
         getContentPane().add(jLabel19);
-        jLabel19.setBounds(260, 240, 29, 20);
+        jLabel19.setBounds(230, 160, 29, 20);
 
         adv_1.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         adv_1.setText("jLabel20");
         getContentPane().add(adv_1);
-        adv_1.setBounds(270, 260, 27, 19);
+        adv_1.setBounds(240, 180, 27, 19);
 
         adv_2.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         adv_2.setText("jLabel21");
         getContentPane().add(adv_2);
-        adv_2.setBounds(270, 290, 27, 19);
+        adv_2.setBounds(240, 210, 27, 19);
 
         score_2.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         score_2.setText("jLabel18");
         getContentPane().add(score_2);
-        score_2.setBounds(320, 290, 21, 19);
+        score_2.setBounds(290, 210, 21, 19);
 
         score_1.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         score_1.setText("jLabel14");
         getContentPane().add(score_1);
-        score_1.setBounds(320, 260, 29, 19);
+        score_1.setBounds(290, 180, 29, 19);
 
         jLabel10.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
         jLabel10.setText("Score");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(310, 240, 35, 20);
+        jLabel10.setBounds(280, 160, 35, 20);
 
         player1Label.setFont(new java.awt.Font("Rockwell Condensed", 1, 12)); // NOI18N
         player1Label.setText("Jugador 1");
         getContentPane().add(player1Label);
-        player1Label.setBounds(350, 260, 110, 15);
+        player1Label.setBounds(320, 180, 110, 15);
 
         player2Label.setFont(new java.awt.Font("Rockwell Condensed", 1, 12)); // NOI18N
         player2Label.setText("Jugador 2");
         getContentPane().add(player2Label);
-        player2Label.setBounds(350, 290, 120, 15);
+        player2Label.setBounds(320, 210, 120, 15);
 
         set1_2.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         set1_2.setText("jLabel15");
         getContentPane().add(set1_2);
-        set1_2.setBounds(460, 290, 25, 19);
+        set1_2.setBounds(430, 210, 25, 19);
 
         set1_1.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         set1_1.setText("jLabel11");
         getContentPane().add(set1_1);
-        set1_1.setBounds(460, 260, 25, 19);
+        set1_1.setBounds(430, 180, 25, 19);
 
         set1.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
         set1.setText("Set 1");
         getContentPane().add(set1);
-        set1.setBounds(460, 240, 31, 20);
+        set1.setBounds(420, 160, 31, 20);
 
         set2.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
         set2.setText("Set 2");
         getContentPane().add(set2);
-        set2.setBounds(510, 240, 31, 20);
+        set2.setBounds(470, 160, 31, 20);
 
         set2_1.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         set2_1.setText("jLabel12");
         getContentPane().add(set2_1);
-        set2_1.setBounds(510, 260, 25, 19);
+        set2_1.setBounds(480, 180, 25, 19);
 
         set2_2.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         set2_2.setText("jLabel16");
         getContentPane().add(set2_2);
-        set2_2.setBounds(510, 290, 25, 19);
+        set2_2.setBounds(480, 210, 25, 19);
 
         set3_2.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         set3_2.setText("jLabel17");
         getContentPane().add(set3_2);
-        set3_2.setBounds(560, 290, 25, 19);
+        set3_2.setBounds(530, 210, 25, 19);
 
         set3_1.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         set3_1.setText("jLabel13");
         getContentPane().add(set3_1);
-        set3_1.setBounds(560, 260, 25, 19);
+        set3_1.setBounds(530, 180, 25, 19);
 
         set3.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
         set3.setText("Set 3");
         getContentPane().add(set3);
-        set3.setBounds(560, 240, 31, 20);
+        set3.setBounds(520, 160, 31, 20);
 
         set4.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
         set4.setText("Set 4");
         getContentPane().add(set4);
-        set4.setBounds(610, 240, 31, 20);
+        set4.setBounds(570, 160, 31, 20);
 
         set4_1.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         set4_1.setText("jLabel13");
         getContentPane().add(set4_1);
-        set4_1.setBounds(610, 260, 25, 19);
+        set4_1.setBounds(580, 180, 25, 19);
 
         set4_2.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         set4_2.setText("jLabel17");
         getContentPane().add(set4_2);
-        set4_2.setBounds(610, 290, 25, 19);
+        set4_2.setBounds(580, 210, 25, 19);
 
         set5_2.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         set5_2.setText("jLabel17");
         getContentPane().add(set5_2);
-        set5_2.setBounds(650, 290, 25, 19);
+        set5_2.setBounds(620, 210, 25, 19);
 
         set5_1.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         set5_1.setText("jLabel13");
         getContentPane().add(set5_1);
-        set5_1.setBounds(650, 260, 25, 19);
+        set5_1.setBounds(620, 180, 25, 19);
 
         set5.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
         set5.setText("Set 5");
         getContentPane().add(set5);
-        set5.setBounds(650, 240, 31, 20);
+        set5.setBounds(610, 160, 31, 20);
 
-        jLabel23.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
+        jLabel23.setFont(new java.awt.Font("Rockwell Condensed", 1, 24)); // NOI18N
         jLabel23.setText("Tabla de scores:");
         getContentPane().add(jLabel23);
-        jLabel23.setBounds(380, 190, 108, 20);
+        jLabel23.setBounds(320, 110, 210, 29);
 
         listaJugadas.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -418,12 +422,12 @@ public class GUI extends javax.swing.JFrame {
         jScrollPane1.setViewportView(listaJugadas);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(700, 120, 250, 290);
+        jScrollPane1.setBounds(660, 120, 250, 280);
 
-        jLabel1.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Rockwell Condensed", 1, 18)); // NOI18N
         jLabel1.setText("Historial de Jugadas:");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(700, 100, 120, 18);
+        jLabel1.setBounds(660, 100, 170, 22);
 
         exitButton.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
         exitButton.setText("Salir");
@@ -433,12 +437,21 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(exitButton);
-        exitButton.setBounds(880, 420, 59, 27);
+        exitButton.setBounds(840, 410, 59, 27);
+
+        setLabel.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
+        setLabel.setText("jLabel6");
+        getContentPane().add(setLabel);
+        setLabel.setBounds(390, 260, 60, 19);
 
         jLabel4.setFont(new java.awt.Font("Rockwell Condensed", 3, 58)); // NOI18N
         jLabel4.setText("Tennis Scoring App");
         getContentPane().add(jLabel4);
         jLabel4.setBounds(220, -10, 500, 110);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/PIBackground.jpg"))); // NOI18N
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(0, 0, 980, 480);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -603,6 +616,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JList<String> listaJugadas;
@@ -628,6 +642,7 @@ public class GUI extends javax.swing.JFrame {
     public static javax.swing.JLabel set5;
     public static javax.swing.JLabel set5_1;
     public static javax.swing.JLabel set5_2;
+    public static javax.swing.JLabel setLabel;
     public static javax.swing.JLabel statusLabel;
     // End of variables declaration//GEN-END:variables
 }

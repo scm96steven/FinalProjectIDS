@@ -5,6 +5,8 @@
  */
 package finalprojecttfis;
 
+import static finalprojecttfis.Partida.set;
+
 /**
  *
  * @author Scm96Steven
@@ -20,7 +22,7 @@ public class Tablero {
     }
     
     void setTableText(){
-        
+         GUI.setLabel.setText(String.valueOf(set+1));
          GUI.statusLabel.setText(Partida.status);
          GUI.set1_1.setText(String.valueOf(Partida.jugadores[0].score[0]));
           GUI.set2_1.setText(String.valueOf(Partida.jugadores[0].score[1]));
