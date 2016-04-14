@@ -33,6 +33,7 @@ public class GUI extends javax.swing.JFrame {
       player2Label.setText(jugadores[1].toString());
         System.out.println(PantallaInicial.setSize);
        currentGame = new Partida(jugadores,PantallaInicial.setSize);
+         currentGame.tabla.setTableText();
     }
 
     String currentPlay;
@@ -97,7 +98,6 @@ public class GUI extends javax.swing.JFrame {
         set1 = new javax.swing.JLabel();
         set4 = new javax.swing.JLabel();
         set5 = new javax.swing.JLabel();
-        agregarJugada1 = new javax.swing.JButton();
         score_2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
 
@@ -317,15 +317,6 @@ public class GUI extends javax.swing.JFrame {
         set5.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
         set5.setText("Set 5");
 
-        agregarJugada1.setBackground(new java.awt.Color(204, 204, 204));
-        agregarJugada1.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
-        agregarJugada1.setText("Agregar jugada");
-        agregarJugada1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                agregarJugada1ActionPerformed(evt);
-            }
-        });
-
         score_2.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         score_2.setText("jLabel18");
 
@@ -399,21 +390,19 @@ public class GUI extends javax.swing.JFrame {
                                 .addGap(6, 6, 6)
                                 .addComponent(set3_1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(score_2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8)
-                        .addComponent(player2Label)
+                        .addGap(1, 1, 1)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(statusLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(score_2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(8, 8, 8)
+                                .addComponent(player2Label)))
                         .addGap(20, 20, 20)
                         .addComponent(set1_2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(25, 25, 25)
                         .addComponent(set2_2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(25, 25, 25)
-                        .addComponent(set3_2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(statusLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14)
-                        .addComponent(agregarJugada1)))
+                        .addComponent(set3_2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(5, 5, 5)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(set4)
@@ -527,12 +516,8 @@ public class GUI extends javax.swing.JFrame {
                                     .addComponent(set1_2)
                                     .addComponent(set2_2)
                                     .addComponent(set3_2))))
-                        .addGap(146, 146, 146)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(statusLabel))
-                            .addComponent(agregarJugada1)))
+                        .addGap(152, 152, 152)
+                        .addComponent(statusLabel))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(59, 59, 59)
                         .addComponent(set4)
@@ -612,7 +597,8 @@ public class GUI extends javax.swing.JFrame {
 
     private void agregarJugadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarJugadaActionPerformed
         // TODO add your handling code here:
-       currentGame.tabla.setTableText();
+     
+       currentGame.addPlay(playerIterator, currentPlay);
     }//GEN-LAST:event_agregarJugadaActionPerformed
 
     private void BotonJugada7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada7ActionPerformed
@@ -646,11 +632,6 @@ public class GUI extends javax.swing.JFrame {
         currentPlay = "Slice";
         System.out.println(currentPlay);
     }//GEN-LAST:event_BotonJugada9ActionPerformed
-
-    private void agregarJugada1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarJugada1ActionPerformed
-        // TODO add your handling code here:
-       
-    }//GEN-LAST:event_agregarJugada1ActionPerformed
 
  
     /**
@@ -710,7 +691,6 @@ public class GUI extends javax.swing.JFrame {
     public static javax.swing.JLabel adv_1;
     public static javax.swing.JLabel adv_2;
     private javax.swing.JButton agregarJugada;
-    private javax.swing.JButton agregarJugada1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel19;
