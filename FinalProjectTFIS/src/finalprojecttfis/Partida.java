@@ -28,7 +28,8 @@ public class Partida {
     }
     
     
-     public void addPlay(){
+     public void addPlay(int playerIterator, String currentPlay){
+         String currentPlayer=this.jugadores[playerIterator].name;
         int oponent = (playerIterator + 1) % 2;
         Boolean deuceWinner = false;
         
