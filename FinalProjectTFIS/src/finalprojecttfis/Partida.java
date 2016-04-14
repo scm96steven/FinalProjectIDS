@@ -77,6 +77,10 @@ public class Partida {
                         jugadores[currentGame.scoreIterator].score[currentGame.set]++; //Se sube el score ya que alcanzo los 40 puntos y 1 mas.
                         System.out.println("Hace un game " + jugadores[currentGame.scoreIterator].toString());
                         currentGame.listData[currentGame.listIterator++] = "Hace un game " + jugadores[currentGame.scoreIterator].toString();
+                        if (currentGame.jugadores[playerIterator].score[currentGame.set] == 6 && currentGame.jugadores[oponent].score[currentGame.set] == 6){
+                             currentGame.status="Tie Break";
+                            System.out.println("Tie break");
+                        }
                     } else //Si hay deuce entonces...
                     {
                         //Se imprime el score del deuce.
