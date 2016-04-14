@@ -92,11 +92,11 @@ public class GUI extends javax.swing.JFrame {
         adv_1 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        set3 = new javax.swing.JLabel();
+        set2 = new javax.swing.JLabel();
+        set1 = new javax.swing.JLabel();
+        set4 = new javax.swing.JLabel();
+        set5 = new javax.swing.JLabel();
         agregarJugada1 = new javax.swing.JButton();
         score_2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -302,20 +302,20 @@ public class GUI extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
         jLabel10.setText("Score");
 
-        jLabel9.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
-        jLabel9.setText("Set 3");
+        set3.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
+        set3.setText("Set 3");
 
-        jLabel8.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
-        jLabel8.setText("Set 2");
+        set2.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
+        set2.setText("Set 2");
 
-        jLabel7.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
-        jLabel7.setText("Set 1");
+        set1.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
+        set1.setText("Set 1");
 
-        jLabel11.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
-        jLabel11.setText("Set 4");
+        set4.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
+        set4.setText("Set 4");
 
-        jLabel12.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
-        jLabel12.setText("Set 5");
+        set5.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
+        set5.setText("Set 5");
 
         agregarJugada1.setBackground(new java.awt.Color(204, 204, 204));
         agregarJugada1.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
@@ -382,19 +382,19 @@ public class GUI extends javax.swing.JFrame {
                         .addComponent(player1Label)
                         .addGap(14, 14, 14)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
+                            .addComponent(set1)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(set1_1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(19, 19, 19)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
+                            .addComponent(set2)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(set2_1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(19, 19, 19)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
+                            .addComponent(set3)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(set3_1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -416,7 +416,7 @@ public class GUI extends javax.swing.JFrame {
                         .addComponent(agregarJugada1)))
                 .addGap(5, 5, 5)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
+                    .addComponent(set4)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -424,7 +424,7 @@ public class GUI extends javax.swing.JFrame {
                             .addComponent(set4_2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(10, 10, 10)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel12)
+                    .addComponent(set5)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -504,17 +504,17 @@ public class GUI extends javax.swing.JFrame {
                                 .addComponent(player1Label))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
-                                .addComponent(jLabel7)
+                                .addComponent(set1)
                                 .addGap(0, 0, 0)
                                 .addComponent(set1_1))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
-                                .addComponent(jLabel8)
+                                .addComponent(set2)
                                 .addGap(0, 0, 0)
                                 .addComponent(set2_1))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
-                                .addComponent(jLabel9)
+                                .addComponent(set3)
                                 .addGap(0, 0, 0)
                                 .addComponent(set3_1)))
                         .addGap(10, 10, 10)
@@ -535,14 +535,14 @@ public class GUI extends javax.swing.JFrame {
                             .addComponent(agregarJugada1)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(59, 59, 59)
-                        .addComponent(jLabel11)
+                        .addComponent(set4)
                         .addGap(0, 0, 0)
                         .addComponent(set4_1)
                         .addGap(11, 11, 11)
                         .addComponent(set4_2))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(59, 59, 59)
-                        .addComponent(jLabel12)
+                        .addComponent(set5)
                         .addGap(0, 0, 0)
                         .addComponent(set5_1)
                         .addGap(11, 11, 11)
@@ -612,7 +612,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void agregarJugadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarJugadaActionPerformed
         // TODO add your handling code here:
-       currentGame.setTableText();
+       currentGame.tabla.setTableText();
     }//GEN-LAST:event_agregarJugadaActionPerformed
 
     private void BotonJugada7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada7ActionPerformed
@@ -713,17 +713,12 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton agregarJugada1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -736,14 +731,19 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.ButtonGroup playsButtonGroup;
     public static javax.swing.JLabel score_1;
     public static javax.swing.JLabel score_2;
+    private javax.swing.JLabel set1;
     public static javax.swing.JLabel set1_1;
     public static javax.swing.JLabel set1_2;
+    private javax.swing.JLabel set2;
     public static javax.swing.JLabel set2_1;
     public static javax.swing.JLabel set2_2;
+    private javax.swing.JLabel set3;
     public static javax.swing.JLabel set3_1;
     public static javax.swing.JLabel set3_2;
+    public static javax.swing.JLabel set4;
     public static javax.swing.JLabel set4_1;
     public static javax.swing.JLabel set4_2;
+    public static javax.swing.JLabel set5;
     public static javax.swing.JLabel set5_1;
     public static javax.swing.JLabel set5_2;
     public static javax.swing.JLabel statusLabel;
