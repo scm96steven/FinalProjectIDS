@@ -71,7 +71,7 @@ public class GUI extends javax.swing.JFrame {
         listaJugadas = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
         adv_2 = new javax.swing.JLabel();
-        score_2 = new javax.swing.JLabel();
+        statusLabel = new javax.swing.JLabel();
         set1_2 = new javax.swing.JLabel();
         set2_2 = new javax.swing.JLabel();
         set3_2 = new javax.swing.JLabel();
@@ -94,6 +94,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         agregarJugada1 = new javax.swing.JButton();
+        score_3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -259,7 +260,7 @@ public class GUI extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(listaJugadas);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(734, 91, 283, 354));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 90, 283, 354));
 
         jLabel1.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
         jLabel1.setText("Historial de Jugadas:");
@@ -269,9 +270,9 @@ public class GUI extends javax.swing.JFrame {
         adv_2.setText("jLabel21");
         jPanel2.add(adv_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 198, 27, -1));
 
-        score_2.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
-        score_2.setText("jLabel18");
-        jPanel2.add(score_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 198, 21, -1));
+        statusLabel.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
+        statusLabel.setText("jLabel18");
+        jPanel2.add(statusLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, 50, -1));
 
         set1_2.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         set1_2.setText("jLabel15");
@@ -366,6 +367,10 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         jPanel2.add(agregarJugada1, new org.netbeans.lib.awtextra.AbsoluteConstraints(394, 364, -1, -1));
+
+        score_3.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
+        score_3.setText("jLabel18");
+        jPanel2.add(score_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 198, 21, -1));
 
         jTabbedPane1.addTab("Anotar Jugada", jPanel2);
 
@@ -469,6 +474,7 @@ public class GUI extends javax.swing.JFrame {
        
     }//GEN-LAST:event_agregarJugada1ActionPerformed
 
+ 
     /**
      * @param args the command line arguments
      */
@@ -543,13 +549,13 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JList<String> listaJugadas;
+    public static javax.swing.JList<String> listaJugadas;
     private javax.swing.JLabel player1Label;
     private javax.swing.JLabel player2Label;
     private javax.swing.ButtonGroup playersButtonGroup;
     private javax.swing.ButtonGroup playsButtonGroup;
     public static javax.swing.JLabel score_1;
-    public static javax.swing.JLabel score_2;
+    public static javax.swing.JLabel score_3;
     public static javax.swing.JLabel set1_1;
     public static javax.swing.JLabel set1_2;
     public static javax.swing.JLabel set2_1;
@@ -560,5 +566,6 @@ public class GUI extends javax.swing.JFrame {
     public static javax.swing.JLabel set4_2;
     public static javax.swing.JLabel set5_1;
     public static javax.swing.JLabel set5_2;
+    public static javax.swing.JLabel statusLabel;
     // End of variables declaration//GEN-END:variables
 }

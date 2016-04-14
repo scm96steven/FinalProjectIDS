@@ -124,7 +124,7 @@ public class Partida {
             }
 
             System.out.println(currentGame.playerScore[currentGame.scoreIterator]);
-            listaJugadas.setVisible(true); 
+            GUI.listaJugadas.setVisible(true); 
             if (currentGame.playerScore[currentGame.scoreIterator] != 0 && currentGame.playerScore[currentGame.scoreIterator] != 40) {
                 currentGame.listData[currentGame.listIterator++] = (currentPlayer + ", " + currentPlay + ", Set:" + Integer.toString(currentGame.set + 1) + ", Score:" + Integer.toString(currentGame.playerScore[currentGame.scoreIterator]));
             }
@@ -134,7 +134,7 @@ public class Partida {
                 deuceWinner = false;
             }
 
-            listaJugadas.setListData(currentGame.listData); //Se actualiza el historial de jugadas con las nuevas jugadas.
+            GUI.listaJugadas.setListData(currentGame.listData); //Se actualiza el historial de jugadas con las nuevas jugadas.
 
             setTableText(); //Se actualizan los labels de la tabla de score.
 
@@ -144,10 +144,10 @@ public class Partida {
             currentGame.listData[currentGame.listIterator++] = "Gana el Partido el " + jugadores[currentGame.scoreIterator].toString();
             currentGame.game = false;
             currentGame.status = ("Ganador : " + jugadores[currentGame.scoreIterator].toString());
-            JOptionPane.showMessageDialog(null, "Gana el Partido el " + jugadores[currentGame.scoreIterator].toString()); //Aviso de que un jugador gano la partida.
+            //JOptionPane.showMessageDialog(null, "Gana el Partido el " + jugadores[currentGame.scoreIterator].toString()); //Aviso de que un jugador gano la partida.
 
         }
-        statusLabel.setText(currentGame.status); //Se actualiza el status al correspondiente segun lo que haya pasado en la jugada.
+        GUI.statusLabel.setText(currentGame.status); //Se actualiza el status al correspondiente segun lo que haya pasado en la jugada.
         String[] hola = {""};
        
     }
