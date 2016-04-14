@@ -10,22 +10,24 @@ package finalprojecttfis;
  * @author Adalberto
  */
 public class Partida {
-    int set=0;
-    int setsSize;
-    Jugador[] jugadores;
-    String status="normal";
-    String[] listData = new String[1000];
-    int listIterator = 0;
-    int[] playerScore = {0, 0}; //Esta variable almacena el score actual del jugador sea este 0, 15, 30, 40.
-    int[] advanceArr = {0, 0}; //Este array almacena los score en el Deuce.
-    int[] playerSets = {0, 0}; //Almacena cuantos sets tiene ganado cada jugador.
-    boolean game = true;
-    int scoreIterator = 0;
+     public static  int set=0;
+      public static int setsSize;
+    public static Jugador[] jugadores;
+     public static  String status="normal";
+      public static String[] listData = new String[1000];
+     public static  int listIterator = 0;
+      public static int[] playerScore = {0, 0}; //Esta variable almacena el score actual del jugador sea este 0, 15, 30, 40.
+      public static int[] advanceArr = {0, 0}; //Este array almacena los score en el Deuce.
+     public static  int[] playerSets = {0, 0}; //Almacena cuantos sets tiene ganado cada jugador.
+    public static   boolean game = true;
+      public static int scoreIterator = 0;
+      public Tablero tabla;
     Partida currentGame = this;
     public Partida(Jugador[] players, int size){
         jugadores=players;
         setsSize=size;
-        System.out.println(setsSize);
+        tabla = new Tablero(setsSize);
+        tabla.setTableSize();
     }
     
     
@@ -100,7 +102,7 @@ public class Partida {
                         if (Math.abs(currentGame.advanceArr[currentGame.scoreIterator] - currentGame.advanceArr[oponent]) == 2) { //si alguien tiene ventaja de 2. Gana el deuce
                             System.out.println("score " + jugadores[currentGame.scoreIterator].toString() + jugadores[currentGame.scoreIterator].score[currentGame.set]);
                             deuceWinner = true; 
-                            setTableText();
+                            tabla.setTableText();
                             currentGame.advanceArr[currentGame.scoreIterator] = 0; //Se resetea el array para un proximo deuce.
                             currentGame.advanceArr[oponent] = 0; //Se resetea el array para un proximo deuce.
                             currentGame.status = "Partida Normal";
@@ -137,7 +139,7 @@ public class Partida {
 
             GUI.listaJugadas.setListData(currentGame.listData); //Se actualiza el historial de jugadas con las nuevas jugadas.
 
-            setTableText(); //Se actualizan los labels de la tabla de score.
+            tabla.setTableText(); //Se actualizan los labels de la tabla de score.
 
         }
         if (currentGame.playerSets[currentGame.scoreIterator] >= 2 && currentGame.game) { //Si un jugador tiene mas de 2 sets de 3, este gana la partida.
@@ -153,35 +155,6 @@ public class Partida {
        
     }
     
-         void setTableText(){
-        
          
-         GUI.set1_1.setText(String.valueOf(jugadores[0].score[0]));
-          GUI.set2_1.setText(String.valueOf(jugadores[0].score[1]));
-             GUI.set3_1.setText(String.valueOf(jugadores[0].score[2]));
-             GUI.score_1.setText(String.valueOf(playerScore[0]));
-             
-              GUI.set1_2.setText(String.valueOf(jugadores[1].score[0]));
-             GUI.set2_2.setText(String.valueOf(jugadores[1].score[1]));
-             GUI.set3_2.setText(String.valueOf(jugadores[1].score[2]));
-            GUI.score_2.setText(String.valueOf(playerScore[1]));
-          if(setsSize==5)
-         {
-              GUI.set4_1.setText(String.valueOf(jugadores[0].score[3]));
-             GUI.set5_1.setText(String.valueOf(jugadores[0].score[4]));
-             
-            GUI.set4_2.setText(String.valueOf(jugadores[1].score[3]));
-             GUI.set5_2.setText(String.valueOf(jugadores[1].score[4]));
-         }  
-            
-            GUI.adv_1.setText("");
-            GUI.adv_2.setText("");
-            if(advanceArr[0]==1)
-              GUI.adv_1.setText("*");
-             if(advanceArr[1]==1)
-             GUI.adv_2.setText("*");      
-     
-     
-     }
      
 }
