@@ -25,6 +25,7 @@ public class Partida {
     public Partida(Jugador[] players, int size){
         jugadores=players;
         setsSize=size;
+        System.out.println(setsSize);
     }
     
     
@@ -154,7 +155,7 @@ public class Partida {
     
          void setTableText(){
         
-     
+         
          GUI.set1_1.setText(String.valueOf(jugadores[0].score[0]));
           GUI.set2_1.setText(String.valueOf(jugadores[0].score[1]));
              GUI.set3_1.setText(String.valueOf(jugadores[0].score[2]));
@@ -163,10 +164,17 @@ public class Partida {
               GUI.set1_2.setText(String.valueOf(jugadores[1].score[0]));
              GUI.set2_2.setText(String.valueOf(jugadores[1].score[1]));
              GUI.set3_2.setText(String.valueOf(jugadores[1].score[2]));
-             
-             
             GUI.score_2.setText(String.valueOf(playerScore[1]));
-               GUI.adv_1.setText("");
+          if(setsSize==5)
+         {
+              GUI.set4_1.setText(String.valueOf(jugadores[0].score[3]));
+             GUI.set5_1.setText(String.valueOf(jugadores[0].score[4]));
+             
+            GUI.set4_2.setText(String.valueOf(jugadores[1].score[3]));
+             GUI.set5_2.setText(String.valueOf(jugadores[1].score[4]));
+         }  
+            
+            GUI.adv_1.setText("");
             GUI.adv_2.setText("");
             if(advanceArr[0]==1)
               GUI.adv_1.setText("*");

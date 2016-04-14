@@ -32,7 +32,7 @@ public class GUI extends javax.swing.JFrame {
      player1Label.setText(jugadores[0].toString());
       player2Label.setText(jugadores[1].toString());
         System.out.println(PantallaInicial.setSize);
-       currentGame = new Partida(jugadores,3);
+       currentGame = new Partida(jugadores,PantallaInicial.setSize);
     }
 
     String currentPlay;
