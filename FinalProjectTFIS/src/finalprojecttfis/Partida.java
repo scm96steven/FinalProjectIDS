@@ -23,11 +23,13 @@ public class Partida {
       public static int scoreIterator = 0;
       public Tablero tabla;
     Partida currentGame = this;
+    
     public Partida(Jugador[] players, int size){
         jugadores=players;
         setsSize=size;
         tabla = new Tablero(setsSize);
         tabla.setTableSize();
+        currentGame.listData[currentGame.listIterator++] = "Partido: " + jugadores[0].toString() +" vs "+jugadores[1].toString()+" de: "+ setsSize+" Sets";
     }
     
     
