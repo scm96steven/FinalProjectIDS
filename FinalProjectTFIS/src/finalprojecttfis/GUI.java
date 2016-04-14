@@ -551,13 +551,11 @@ public class GUI extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_saveHistorialButtonActionPerformed
-<<<<<<< HEAD
-=======
 
-        currentGame.addPlay(playerIterator, currentPlay);
+       currentGame.addPlay(playerIterator, currentPlay);
        currentGame.tabla.setTableText();
     }                
->>>>>>> origin/master
+
 
     private void BotonJugada7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada7ActionPerformed
         // TODO add your handling code here:
