@@ -765,27 +765,7 @@ public class GUI extends javax.swing.JFrame {
         setTableText();
     }
     
-     public void setTableText() {
-        //Sirve para setear el valor de la tabla de score correspondiente en cada label.
-
-        jLabel11.setText(String.valueOf(jugadores[0].score[0]));
-        jLabel12.setText(String.valueOf(jugadores[0].score[1]));
-        jLabel13.setText(String.valueOf(jugadores[0].score[2]));
-        jLabel14.setText(String.valueOf(currentGame.playerScore[0]));
-        jLabel15.setText(String.valueOf(jugadores[1].score[0]));
-        jLabel16.setText(String.valueOf(jugadores[1].score[1]));
-        jLabel17.setText(String.valueOf(jugadores[1].score[2]));
-        jLabel18.setText(String.valueOf(currentGameplayerScore[1]));
-        jLabel20.setText("");
-        jLabel21.setText("");
-        if (advanceArr[0] == 1) { 
-            jLabel20.setText("*");
-        }
-        if (advanceArr[1] == 1) {
-            jLabel21.setText("*");
-        }
-
-    }
+     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton BotonJugada1;
