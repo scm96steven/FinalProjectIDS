@@ -30,6 +30,7 @@ public class Partida {
         tabla = new Tablero(setsSize);
         tabla.setTableSize();
         currentGame.listData[currentGame.listIterator++] = "Partido: " + jugadores[0].toString() +" vs "+jugadores[1].toString()+" de: "+ setsSize+" Sets";
+        listIterator++;
     }
     
     
