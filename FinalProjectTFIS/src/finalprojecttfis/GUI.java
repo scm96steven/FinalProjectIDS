@@ -5,6 +5,7 @@
  */
 package finalprojecttfis;
 
+import static finalprojecttfis.PantallaInicial.player1tf;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,24 +18,27 @@ public class GUI extends javax.swing.JFrame {
      * Creates new form GUI1
      */
     Jugador[] jugadores;
+     Partida currentGame;
     
     
     
-    
-    public  GUI(Jugador[] players) {
+    public  GUI() {
         initComponents();
          setSize(1000, 530);
          listaJugadas.setVisible(false);
          BotonJugada1.setSelected(true);
         BotonJugador1.setSelected(true);
-      jugadores = players;
-      
+      jugadores = PantallaInicial.jugadores;
+     player1Label.setText(jugadores[0].toString());
+      player2Label.setText(jugadores[1].toString());
+        System.out.println(PantallaInicial.setSize);
+       currentGame = new Partida(jugadores,3);
     }
 
     String currentPlay;
     String currentPlayer; //nombre del Jugador 2 en el array
      int playerIterator;
-    Partida currentGame = new Partida(jugadores,3);
+   
   
     /**
      * This method is called from within the constructor to initialize the form.
@@ -94,7 +98,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         agregarJugada1 = new javax.swing.JButton();
-        score_3 = new javax.swing.JLabel();
+        score_2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -322,8 +326,8 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        score_3.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
-        score_3.setText("jLabel18");
+        score_2.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
+        score_2.setText("jLabel18");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -396,7 +400,7 @@ public class GUI extends javax.swing.JFrame {
                                 .addComponent(set3_1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(score_3, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(score_2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(8, 8, 8)
                         .addComponent(player2Label)
                         .addGap(20, 20, 20)
@@ -515,7 +519,7 @@ public class GUI extends javax.swing.JFrame {
                                 .addComponent(set3_1)))
                         .addGap(10, 10, 10)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(score_3)
+                            .addComponent(score_2)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -680,9 +684,11 @@ public class GUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GUI(jugadores).setVisible(true);
+                new GUI().setVisible(true);
             }
         });
+        
+   
     }
    
 
@@ -729,7 +735,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.ButtonGroup playersButtonGroup;
     private javax.swing.ButtonGroup playsButtonGroup;
     public static javax.swing.JLabel score_1;
-    public static javax.swing.JLabel score_3;
+    public static javax.swing.JLabel score_2;
     public static javax.swing.JLabel set1_1;
     public static javax.swing.JLabel set1_2;
     public static javax.swing.JLabel set2_1;

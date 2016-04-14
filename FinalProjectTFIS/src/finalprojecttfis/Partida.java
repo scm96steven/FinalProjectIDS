@@ -153,26 +153,26 @@ public class Partida {
     }
     
          void setTableText(){
-     
+        
      
          GUI.set1_1.setText(String.valueOf(jugadores[0].score[0]));
-            GUI.set2_1.setText(String.valueOf(jugadores[0].score[1]));
+          GUI.set2_1.setText(String.valueOf(jugadores[0].score[1]));
              GUI.set3_1.setText(String.valueOf(jugadores[0].score[2]));
-             //score_1.setText(String.valueOf(jugadores[0].playerScore[0]));
+             GUI.score_1.setText(String.valueOf(playerScore[0]));
              
               GUI.set1_2.setText(String.valueOf(jugadores[1].score[0]));
              GUI.set2_2.setText(String.valueOf(jugadores[1].score[1]));
              GUI.set3_2.setText(String.valueOf(jugadores[1].score[2]));
              
              
-            // jLabel18.setText(String.valueOf(playerScore[1]));
+            GUI.score_2.setText(String.valueOf(playerScore[1]));
                GUI.adv_1.setText("");
             GUI.adv_2.setText("");
-           /*  if(advanceArr[0]==1)
-              adv_1.setText("*");
+            if(advanceArr[0]==1)
+              GUI.adv_1.setText("*");
              if(advanceArr[1]==1)
-             adv_2.setText("*");      
-     */
+             GUI.adv_2.setText("*");      
+     
      
      }
      

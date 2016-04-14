@@ -20,6 +20,8 @@ public class Jugador {
         }
      
     }
-
+   public String toString(){
+   return this.name;
+   }
     
 }

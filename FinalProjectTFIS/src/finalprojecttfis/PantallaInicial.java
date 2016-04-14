@@ -5,6 +5,8 @@
  */
 package finalprojecttfis;
 
+import javax.swing.SwingUtilities;
+
 /**
  *
  * @author Scm96Steven
@@ -16,14 +18,13 @@ public class PantallaInicial extends javax.swing.JFrame {
      */
     public PantallaInicial() {
         initComponents();
-
         set3button.setSelected(true);
     }
+     public static Jugador[] jugadores;
+     public static int setSize = 3;
+     public static String player1Name;
+     public static String player2Name;
 
-     int setSize = 3;
-     String player1Name;
-     String player2Name;
-     
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -170,9 +171,8 @@ public class PantallaInicial extends javax.swing.JFrame {
         
         
         
-        Jugador[] jugadores = createPlayers();
-        
-        GUI gn = new GUI(jugadores);
+    jugadores = createPlayers();
+        GUI gn = new GUI();
         gn.setVisible(true);
         dispose();
         
@@ -232,7 +232,9 @@ public class PantallaInicial extends javax.swing.JFrame {
             public void run() {
                 new PantallaInicial().setVisible(true);
             }
+            
         });
+        
     }
     
     public Jugador[] createPlayers(){
@@ -265,7 +267,11 @@ public class PantallaInicial extends javax.swing.JFrame {
           
             return playersArr;
     }
+public  String[] players(){
+String[] players = {this.player1Name, this.player2Name};    
 
+    return players;
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAceptar;
     private javax.swing.ButtonGroup buttonGroup1;
@@ -274,8 +280,8 @@ public class PantallaInicial extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField player1tf;
-    private javax.swing.JTextField player2tf;
+    public static javax.swing.JTextField player1tf;
+    public static javax.swing.JTextField player2tf;
     private javax.swing.JRadioButton set3button;
     private javax.swing.JRadioButton set5button;
     // End of variables declaration//GEN-END:variables
