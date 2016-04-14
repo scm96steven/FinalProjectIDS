@@ -21,7 +21,7 @@ public class Partida {
     int[] playerSets = {0, 0}; //Almacena cuantos sets tiene ganado cada jugador.
     boolean game = true;
     int scoreIterator = 0;
-    
+    Partida currentGame = this;
     public Partida(Jugador[] players, int size){
         jugadores=players;
         setsSize=size;
@@ -147,8 +147,32 @@ public class Partida {
 
         }
         statusLabel.setText(currentGame.status); //Se actualiza el status al correspondiente segun lo que haya pasado en la jugada.
-        setTableText();
+        String[] hola = {""};
+       
     }
     
-    
+         void setTableText(){
+     
+     
+         GUI.set1_1.setText(String.valueOf(jugadores[0].score[0]));
+            GUI.set2_1.setText(String.valueOf(jugadores[0].score[1]));
+             GUI.set3_1.setText(String.valueOf(jugadores[0].score[2]));
+             //score_1.setText(String.valueOf(jugadores[0].playerScore[0]));
+             
+              GUI.set1_2.setText(String.valueOf(jugadores[1].score[0]));
+             GUI.set2_2.setText(String.valueOf(jugadores[1].score[1]));
+             GUI.set3_2.setText(String.valueOf(jugadores[1].score[2]));
+             
+             
+            // jLabel18.setText(String.valueOf(playerScore[1]));
+               GUI.adv_1.setText("");
+            GUI.adv_2.setText("");
+           /*  if(advanceArr[0]==1)
+              adv_1.setText("*");
+             if(advanceArr[1]==1)
+             adv_2.setText("*");      
+     */
+     
+     }
+     
 }
