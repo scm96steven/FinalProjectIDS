@@ -35,7 +35,7 @@ public class Partida {
          String currentPlayer=this.jugadores[playerIterator].name;
         int oponent = (playerIterator + 1) % 2;
         Boolean deuceWinner = false;
-        
+        scoreIterator=playerIterator;
         
         if (currentGame.jugadores[playerIterator].score[currentGame.set] == 6 && currentGame.jugadores[oponent].score[currentGame.set] == 6){
             currentGame.status="Tie Break";
@@ -73,9 +73,10 @@ public class Partida {
                     if (currentGame.playerScore[currentGame.scoreIterator] != currentGame.playerScore[oponent]) //No hay deuce
                     {
                         currentGame.playerScore[currentGame.scoreIterator] = 0;
+                        currentGame.playerScore[oponent] = 0;
                         jugadores[currentGame.scoreIterator].score[currentGame.set]++; //Se sube el score ya que alcanzo los 40 puntos y 1 mas.
-                        System.out.println("Hace un game el " + jugadores[currentGame.scoreIterator].toString());
-                        currentGame.listData[currentGame.listIterator++] = "Hace un game el " + jugadores[currentGame.scoreIterator].toString();
+                        System.out.println("Hace un game " + jugadores[currentGame.scoreIterator].toString());
+                        currentGame.listData[currentGame.listIterator++] = "Hace un game " + jugadores[currentGame.scoreIterator].toString();
                     } else //Si hay deuce entonces...
                     {
                         //Se imprime el score del deuce.
@@ -142,7 +143,7 @@ public class Partida {
             tabla.setTableText(); //Se actualizan los labels de la tabla de score.
 
         }
-        if (currentGame.playerSets[currentGame.scoreIterator] >= 2 && currentGame.game) { //Si un jugador tiene mas de 2 sets de 3, este gana la partida.
+        if (currentGame.playerSets[currentGame.scoreIterator] >= ((setsSize+1)/2) && game) { //Si un jugador tiene mas de 2 sets de 3, este gana la partida.
             System.out.println("Gana el partido el " + jugadores[currentGame.scoreIterator].toString());
             currentGame.listData[currentGame.listIterator++] = "Gana el Partido el " + jugadores[currentGame.scoreIterator].toString();
             currentGame.game = false;
