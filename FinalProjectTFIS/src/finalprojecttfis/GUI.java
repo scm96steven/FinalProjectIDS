@@ -6,6 +6,10 @@
 package finalprojecttfis;
 
 import static finalprojecttfis.PantallaInicial.player1tf;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,13 +23,14 @@ public class GUI extends javax.swing.JFrame {
      */
     Jugador[] jugadores;
      Partida currentGame;
-    
+    ManejoTxt mt;
     
     
     public  GUI() {
         initComponents();
          setSize(1000, 530);
          listaJugadas.setVisible(false);
+        historialAnterior.setVisible(false);
          BotonJugada1.setSelected(true);
         BotonJugador1.setSelected(true);
       jugadores = PantallaInicial.jugadores;
@@ -33,7 +38,9 @@ public class GUI extends javax.swing.JFrame {
       player2Label.setText(jugadores[1].toString());
         System.out.println(PantallaInicial.setSize);
        currentGame = new Partida(jugadores,PantallaInicial.setSize);
-         currentGame.tabla.setTableText();
+       mt = new ManejoTxt();  
+       currentGame.tabla.setTableText();
+         
     }
 
     String currentPlay="Saque";
@@ -62,7 +69,7 @@ public class GUI extends javax.swing.JFrame {
         BotonJugada8 = new javax.swing.JRadioButton();
         BotonJugador2 = new javax.swing.JRadioButton();
         BotonJugada7 = new javax.swing.JRadioButton();
-        agregarJugada = new javax.swing.JButton();
+        saveHistorialButton = new javax.swing.JButton();
         BotonJugada6 = new javax.swing.JRadioButton();
         BotonJugada5 = new javax.swing.JRadioButton();
         BotonJugada4 = new javax.swing.JRadioButton();
@@ -99,16 +106,28 @@ public class GUI extends javax.swing.JFrame {
         set4 = new javax.swing.JLabel();
         set5 = new javax.swing.JLabel();
         score_2 = new javax.swing.JLabel();
+        agregarJugada = new javax.swing.JButton();
+        salir = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        historialAnterior = new javax.swing.JList<>();
+        jLabel4 = new javax.swing.JLabel();
+        leerHistorialButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
+        jPanel2.setLayout(null);
+
         jLabel3.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
         jLabel3.setText("Jugada:");
+        jPanel2.add(jLabel3);
+        jLabel3.setBounds(29, 198, 50, 20);
 
         jLabel2.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
         jLabel2.setText("Seleccione jugador:");
+        jPanel2.add(jLabel2);
+        jLabel2.setBounds(29, 128, 160, 20);
 
         playsButtonGroup.add(BotonJugada9);
         BotonJugada9.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
@@ -119,6 +138,8 @@ public class GUI extends javax.swing.JFrame {
                 BotonJugada9ActionPerformed(evt);
             }
         });
+        jPanel2.add(BotonJugada9);
+        BotonJugada9.setBounds(29, 388, 61, 23);
 
         playersButtonGroup.add(BotonJugador1);
         BotonJugador1.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
@@ -129,6 +150,8 @@ public class GUI extends javax.swing.JFrame {
                 BotonJugador1ActionPerformed(evt);
             }
         });
+        jPanel2.add(BotonJugador1);
+        BotonJugador1.setBounds(29, 148, 89, 23);
 
         playsButtonGroup.add(BotonJugada8);
         BotonJugada8.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
@@ -139,6 +162,8 @@ public class GUI extends javax.swing.JFrame {
                 BotonJugada8ActionPerformed(evt);
             }
         });
+        jPanel2.add(BotonJugada8);
+        BotonJugada8.setBounds(29, 368, 61, 23);
 
         playersButtonGroup.add(BotonJugador2);
         BotonJugador2.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
@@ -149,6 +174,8 @@ public class GUI extends javax.swing.JFrame {
                 BotonJugador2ActionPerformed(evt);
             }
         });
+        jPanel2.add(BotonJugador2);
+        BotonJugador2.setBounds(29, 168, 89, 23);
 
         playsButtonGroup.add(BotonJugada7);
         BotonJugada7.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
@@ -159,15 +186,19 @@ public class GUI extends javax.swing.JFrame {
                 BotonJugada7ActionPerformed(evt);
             }
         });
+        jPanel2.add(BotonJugada7);
+        BotonJugada7.setBounds(29, 347, 123, 23);
 
-        agregarJugada.setBackground(new java.awt.Color(204, 204, 204));
-        agregarJugada.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
-        agregarJugada.setText("Agregar jugada");
-        agregarJugada.addActionListener(new java.awt.event.ActionListener() {
+        saveHistorialButton.setBackground(new java.awt.Color(204, 204, 204));
+        saveHistorialButton.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
+        saveHistorialButton.setText("Guardar Historial");
+        saveHistorialButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                agregarJugadaActionPerformed(evt);
+                saveHistorialButtonActionPerformed(evt);
             }
         });
+        jPanel2.add(saveHistorialButton);
+        saveHistorialButton.setBounds(710, 410, 140, 27);
 
         playsButtonGroup.add(BotonJugada6);
         BotonJugada6.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
@@ -178,6 +209,8 @@ public class GUI extends javax.swing.JFrame {
                 BotonJugada6ActionPerformed(evt);
             }
         });
+        jPanel2.add(BotonJugada6);
+        BotonJugada6.setBounds(29, 328, 109, 23);
 
         playsButtonGroup.add(BotonJugada5);
         BotonJugada5.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
@@ -188,6 +221,8 @@ public class GUI extends javax.swing.JFrame {
                 BotonJugada5ActionPerformed(evt);
             }
         });
+        jPanel2.add(BotonJugada5);
+        BotonJugada5.setBounds(29, 308, 67, 24);
 
         playsButtonGroup.add(BotonJugada4);
         BotonJugada4.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
@@ -198,6 +233,8 @@ public class GUI extends javax.swing.JFrame {
                 BotonJugada4ActionPerformed(evt);
             }
         });
+        jPanel2.add(BotonJugada4);
+        BotonJugada4.setBounds(29, 288, 61, 23);
 
         playsButtonGroup.add(BotonJugada3);
         BotonJugada3.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
@@ -208,6 +245,8 @@ public class GUI extends javax.swing.JFrame {
                 BotonJugada3ActionPerformed(evt);
             }
         });
+        jPanel2.add(BotonJugada3);
+        BotonJugada3.setBounds(29, 268, 61, 23);
 
         playsButtonGroup.add(BotonJugada2);
         BotonJugada2.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
@@ -218,6 +257,8 @@ public class GUI extends javax.swing.JFrame {
                 BotonJugada2ActionPerformed(evt);
             }
         });
+        jPanel2.add(BotonJugada2);
+        BotonJugada2.setBounds(29, 248, 131, 23);
 
         playsButtonGroup.add(BotonJugada1);
         BotonJugada1.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
@@ -228,15 +269,23 @@ public class GUI extends javax.swing.JFrame {
                 BotonJugada1ActionPerformed(evt);
             }
         });
+        jPanel2.add(BotonJugada1);
+        BotonJugada1.setBounds(29, 228, 61, 23);
 
         jLabel22.setFont(new java.awt.Font("Rockwell Condensed", 1, 15)); // NOI18N
         jLabel22.setText("Status:");
+        jPanel2.add(jLabel22);
+        jLabel22.setBounds(286, 367, 41, 19);
 
         jLabel27.setFont(new java.awt.Font("Rockwell Condensed", 1, 15)); // NOI18N
         jLabel27.setText("Set:");
+        jPanel2.add(jLabel27);
+        jLabel27.setBounds(286, 346, 22, 19);
 
         jLabel23.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
         jLabel23.setText("Tabla de scores:");
+        jPanel2.add(jLabel23);
+        jLabel23.setBounds(470, 91, 108, 20);
 
         listaJugadas.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -245,307 +294,203 @@ public class GUI extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(listaJugadas);
 
+        jPanel2.add(jScrollPane1);
+        jScrollPane1.setBounds(690, 90, 283, 310);
+
         jLabel1.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
         jLabel1.setText("Historial de Jugadas:");
+        jPanel2.add(jLabel1);
+        jLabel1.setBounds(700, 70, 120, 18);
 
         adv_2.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         adv_2.setText("jLabel21");
+        jPanel2.add(adv_2);
+        adv_2.setBounds(284, 198, 27, 19);
 
         statusLabel.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         statusLabel.setText("jLabel18");
+        jPanel2.add(statusLabel);
+        statusLabel.setBounds(330, 370, 90, 19);
 
         set1_2.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         set1_2.setText("jLabel15");
+        jPanel2.add(set1_2);
+        set1_2.setBounds(440, 199, 25, 19);
 
         set2_2.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         set2_2.setText("jLabel16");
+        jPanel2.add(set2_2);
+        set2_2.setBounds(490, 199, 25, 19);
 
         set3_2.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         set3_2.setText("jLabel17");
+        jPanel2.add(set3_2);
+        set3_2.setBounds(540, 199, 25, 19);
 
         set4_2.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         set4_2.setText("jLabel17");
+        jPanel2.add(set4_2);
+        set4_2.setBounds(589, 199, 25, 19);
 
         set5_2.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         set5_2.setText("jLabel17");
+        jPanel2.add(set5_2);
+        set5_2.setBounds(630, 199, 25, 19);
 
         player2Label.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
         player2Label.setText("Jugador 2");
+        jPanel2.add(player2Label);
+        player2Label.setBounds(364, 199, 56, 18);
 
         player1Label.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
         player1Label.setText("Jugador 1");
+        jPanel2.add(player1Label);
+        player1Label.setBounds(364, 169, 56, 18);
 
         set1_1.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         set1_1.setText("jLabel11");
+        jPanel2.add(set1_1);
+        set1_1.setBounds(440, 169, 25, 19);
 
         set2_1.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         set2_1.setText("jLabel12");
+        jPanel2.add(set2_1);
+        set2_1.setBounds(490, 169, 25, 19);
 
         set3_1.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         set3_1.setText("jLabel13");
+        jPanel2.add(set3_1);
+        set3_1.setBounds(540, 169, 25, 19);
 
         set4_1.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         set4_1.setText("jLabel13");
+        jPanel2.add(set4_1);
+        set4_1.setBounds(589, 169, 25, 19);
 
         set5_1.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         set5_1.setText("jLabel13");
+        jPanel2.add(set5_1);
+        set5_1.setBounds(630, 169, 25, 19);
 
         score_1.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         score_1.setText("jLabel14");
+        jPanel2.add(score_1);
+        score_1.setBounds(335, 168, 29, 19);
 
         adv_1.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         adv_1.setText("jLabel20");
+        jPanel2.add(adv_1);
+        adv_1.setBounds(284, 168, 27, 19);
 
         jLabel19.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
         jLabel19.setText("Adv.");
+        jPanel2.add(jLabel19);
+        jLabel19.setBounds(282, 148, 29, 20);
 
         jLabel10.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
         jLabel10.setText("Score");
+        jPanel2.add(jLabel10);
+        jLabel10.setBounds(329, 148, 35, 20);
 
         set3.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
         set3.setText("Set 3");
+        jPanel2.add(set3);
+        set3.setBounds(534, 149, 31, 20);
 
         set2.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
         set2.setText("Set 2");
+        jPanel2.add(set2);
+        set2.setBounds(484, 149, 31, 20);
 
         set1.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
         set1.setText("Set 1");
+        jPanel2.add(set1);
+        set1.setBounds(434, 149, 31, 20);
 
         set4.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
         set4.setText("Set 4");
+        jPanel2.add(set4);
+        set4.setBounds(583, 149, 31, 20);
 
         set5.setFont(new java.awt.Font("Rockwell Condensed", 1, 16)); // NOI18N
         set5.setText("Set 5");
+        jPanel2.add(set5);
+        set5.setBounds(624, 149, 31, 20);
 
         score_2.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         score_2.setText("jLabel18");
+        jPanel2.add(score_2);
+        score_2.setBounds(335, 198, 21, 19);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(734, 734, 734)
-                .addComponent(jLabel1))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotonJugador2)
-                    .addComponent(BotonJugador1)
-                    .addComponent(jLabel3)
-                    .addComponent(BotonJugada2)
-                    .addComponent(BotonJugada6)
-                    .addComponent(BotonJugada9)
-                    .addComponent(BotonJugada4)
-                    .addComponent(BotonJugada7)
-                    .addComponent(BotonJugada5)
-                    .addComponent(BotonJugada1)
-                    .addComponent(BotonJugada3)
-                    .addComponent(BotonJugada8)
-                    .addComponent(agregarJugada))
-                .addGap(93, 93, 93)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel19)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(adv_1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(adv_2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(jLabel27))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(jLabel22)))
-                .addGap(2, 2, 2)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(141, 141, 141)
-                        .addComponent(jLabel23))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(score_1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addComponent(player1Label)
-                        .addGap(14, 14, 14)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(set1)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(set1_1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(19, 19, 19)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(set2)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(set2_1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(19, 19, 19)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(set3)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(set3_1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(statusLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(score_2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(8, 8, 8)
-                                .addComponent(player2Label)))
-                        .addGap(20, 20, 20)
-                        .addComponent(set1_2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25)
-                        .addComponent(set2_2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25)
-                        .addComponent(set3_2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(5, 5, 5)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(set4)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(set4_1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(set4_2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(10, 10, 10)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(set5)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(set5_1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(set5_2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(55, 55, 55)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(jLabel1)
-                .addGap(10, 10, 10)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jLabel2)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(BotonJugador2))
-                            .addComponent(BotonJugador1))
-                        .addGap(7, 7, 7)
-                        .addComponent(jLabel3)
-                        .addGap(10, 10, 10)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(BotonJugada2))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(100, 100, 100)
-                                .addComponent(BotonJugada6))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(160, 160, 160)
-                                .addComponent(BotonJugada9))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(60, 60, 60)
-                                .addComponent(BotonJugada4))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(119, 119, 119)
-                                .addComponent(BotonJugada7))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
-                                .addComponent(BotonJugada5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(BotonJugada1)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addComponent(BotonJugada3))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(140, 140, 140)
-                                .addComponent(BotonJugada8)))
-                        .addGap(7, 7, 7)
-                        .addComponent(agregarJugada))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(jLabel19)
-                        .addGap(0, 0, 0)
-                        .addComponent(adv_1)
-                        .addGap(11, 11, 11)
-                        .addComponent(adv_2)
-                        .addGap(129, 129, 129)
-                        .addComponent(jLabel27)
-                        .addGap(2, 2, 2)
-                        .addComponent(jLabel22))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(jLabel23)
-                        .addGap(37, 37, 37)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addGap(0, 0, 0)
-                                .addComponent(score_1))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(player1Label))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(set1)
-                                .addGap(0, 0, 0)
-                                .addComponent(set1_1))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(set2)
-                                .addGap(0, 0, 0)
-                                .addComponent(set2_1))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(set3)
-                                .addGap(0, 0, 0)
-                                .addComponent(set3_1)))
-                        .addGap(10, 10, 10)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(score_2)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(player2Label)
-                                    .addComponent(set1_2)
-                                    .addComponent(set2_2)
-                                    .addComponent(set3_2))))
-                        .addGap(152, 152, 152)
-                        .addComponent(statusLabel))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(set4)
-                        .addGap(0, 0, 0)
-                        .addComponent(set4_1)
-                        .addGap(11, 11, 11)
-                        .addComponent(set4_2))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(set5)
-                        .addGap(0, 0, 0)
-                        .addComponent(set5_1)
-                        .addGap(11, 11, 11)
-                        .addComponent(set5_2))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
+        agregarJugada.setBackground(new java.awt.Color(204, 204, 204));
+        agregarJugada.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
+        agregarJugada.setText("Agregar jugada");
+        agregarJugada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarJugadaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(agregarJugada);
+        agregarJugada.setBounds(29, 418, 121, 27);
+
+        salir.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
+        salir.setText("Salir");
+        salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salirActionPerformed(evt);
+            }
+        });
+        jPanel2.add(salir);
+        salir.setBounds(890, 410, 70, 27);
 
         jTabbedPane1.addTab("Anotar Jugada", jPanel2);
+
+        historialAnterior.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(historialAnterior);
+
+        jLabel4.setFont(new java.awt.Font("Rockwell Condensed", 1, 18)); // NOI18N
+        jLabel4.setText("Historial anterior:");
+
+        leerHistorialButton.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
+        leerHistorialButton.setText("Leer historial anterior");
+        leerHistorialButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                leerHistorialButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1027, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(388, 388, 388)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(393, 393, 393)
+                        .addComponent(jLabel4)))
+                .addContainerGap(362, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(leerHistorialButton)
+                .addGap(460, 460, 460))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 668, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(leerHistorialButton)
+                .addContainerGap(235, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Consultar historial anterior", jPanel3);
@@ -553,7 +498,7 @@ public class GUI extends javax.swing.JFrame {
         jPanel1.add(jTabbedPane1);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 1042, 706);
+        jPanel1.setBounds(0, 0, 1128, 710);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -595,16 +540,17 @@ public class GUI extends javax.swing.JFrame {
         System.out.println(currentPlay);
     }//GEN-LAST:event_BotonJugada6ActionPerformed
 
-    private void agregarJugadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarJugadaActionPerformed
+    private void saveHistorialButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveHistorialButtonActionPerformed
         // TODO add your handling code here:
-<<<<<<< HEAD
-        currentGame.addPlay(playerIterator, currentPlay);
-       currentGame.setTableText();
-=======
-     
-       currentGame.addPlay(playerIterator, currentPlay);
->>>>>>> origin/master
-    }//GEN-LAST:event_agregarJugadaActionPerformed
+
+       try{
+       
+        mt.arrayToText(Partida.listData);
+        } catch (IOException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_saveHistorialButtonActionPerformed
 
     private void BotonJugada7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugada7ActionPerformed
         // TODO add your handling code here:
@@ -637,6 +583,31 @@ public class GUI extends javax.swing.JFrame {
         currentPlay = "Slice";
         System.out.println(currentPlay);
     }//GEN-LAST:event_BotonJugada9ActionPerformed
+
+    private void agregarJugadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarJugadaActionPerformed
+        // TODO add your handling code here:
+         currentGame.addPlay(playerIterator, currentPlay);
+       currentGame.tabla.setTableText();
+
+       currentGame.addPlay(playerIterator, currentPlay);
+    }//GEN-LAST:event_agregarJugadaActionPerformed
+
+    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
+        // TODO add your handling code here:
+         System.exit(0);
+    }//GEN-LAST:event_salirActionPerformed
+
+    private void leerHistorialButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leerHistorialButtonActionPerformed
+        // TODO add your handling code here:
+        String[] hist ={""};
+        historialAnterior.setVisible(true);
+        try {
+             hist = mt.textToArray();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        historialAnterior.setListData(hist);
+    }//GEN-LAST:event_leerHistorialButtonActionPerformed
 
  
     /**
@@ -696,6 +667,7 @@ public class GUI extends javax.swing.JFrame {
     public static javax.swing.JLabel adv_1;
     public static javax.swing.JLabel adv_2;
     private javax.swing.JButton agregarJugada;
+    private javax.swing.JList<String> historialAnterior;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel19;
@@ -704,16 +676,21 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JButton leerHistorialButton;
     public static javax.swing.JList<String> listaJugadas;
     private javax.swing.JLabel player1Label;
     private javax.swing.JLabel player2Label;
     private javax.swing.ButtonGroup playersButtonGroup;
     private javax.swing.ButtonGroup playsButtonGroup;
+    private javax.swing.JButton salir;
+    private javax.swing.JButton saveHistorialButton;
     public static javax.swing.JLabel score_1;
     public static javax.swing.JLabel score_2;
     private javax.swing.JLabel set1;
