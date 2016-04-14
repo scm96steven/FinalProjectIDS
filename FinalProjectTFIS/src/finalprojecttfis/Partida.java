@@ -38,10 +38,11 @@ public class Partida {
         scoreIterator=playerIterator;
         
         if (currentGame.jugadores[playerIterator].score[currentGame.set] == 6 && currentGame.jugadores[oponent].score[currentGame.set] == 6){
-            currentGame.status="Tie Break";
-            System.out.println("Tie break");
-            currentGame.listData[currentGame.listIterator++] = "Tie break";
+            //currentGame.status="Tie Break";
+            
             currentGame.playerScore[currentGame.scoreIterator]++;
+            currentGame.listData[currentGame.listIterator++] = (currentPlayer + ", " + currentPlay + ", Set:" + Integer.toString(currentGame.set + 1) + ", Score:" + Integer.toString(currentGame.playerScore[currentGame.scoreIterator]));
+            GUI.listaJugadas.setListData(currentGame.listData);
             if (currentGame.playerScore[currentGame.scoreIterator] >= 7) {
                 if (Math.abs(currentGame.playerScore[currentGame.scoreIterator] - currentGame.playerScore[oponent]) >= 2) {
                     jugadores[currentGame.scoreIterator].score[currentGame.set]++;
@@ -80,6 +81,7 @@ public class Partida {
                         if (currentGame.jugadores[playerIterator].score[currentGame.set] == 6 && currentGame.jugadores[oponent].score[currentGame.set] == 6){
                              currentGame.status="Tie Break";
                             System.out.println("Tie break");
+                            currentGame.listData[currentGame.listIterator++] = "Tie break";
                         }
                     } else //Si hay deuce entonces...
                     {
