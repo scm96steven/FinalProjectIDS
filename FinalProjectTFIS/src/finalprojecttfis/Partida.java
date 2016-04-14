@@ -53,7 +53,7 @@ public class Partida {
             }
             
         }else { //Si no hay Tie break, entonces sigue la jugada normal.
-            if (currentGame.set <= 3 && currentGame.game) {
+            if (currentGame.set <= setsSize && currentGame.game) {
 
                 if (currentGame.playerScore[currentGame.scoreIterator] == 0) { //Actualiza el score
                     currentGame.playerScore[currentGame.scoreIterator] = 15;

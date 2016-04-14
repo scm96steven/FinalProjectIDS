@@ -35,7 +35,7 @@ public class GUI extends javax.swing.JFrame {
        currentGame = new Partida(jugadores,PantallaInicial.setSize);
     }
 
-    String currentPlay;
+    String currentPlay="Saque";
     String currentPlayer; //nombre del Jugador 2 en el array
      int playerIterator;
    
@@ -612,6 +612,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void agregarJugadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarJugadaActionPerformed
         // TODO add your handling code here:
+        currentGame.addPlay(playerIterator, currentPlay);
        currentGame.setTableText();
     }//GEN-LAST:event_agregarJugadaActionPerformed
 
