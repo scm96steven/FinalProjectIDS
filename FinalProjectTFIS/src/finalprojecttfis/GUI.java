@@ -103,8 +103,10 @@ public class GUI extends javax.swing.JFrame {
         listaJugadas = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
         exitButton = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tennis Scoring App 2.0 ");
         getContentPane().setLayout(null);
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 10, 10);
@@ -433,6 +435,11 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().add(exitButton);
         exitButton.setBounds(880, 420, 59, 27);
 
+        jLabel4.setFont(new java.awt.Font("Rockwell Condensed", 3, 58)); // NOI18N
+        jLabel4.setText("Tennis Scoring App");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(220, -10, 500, 110);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -595,6 +602,7 @@ public class GUI extends javax.swing.JFrame {
     public static javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JList<String> listaJugadas;

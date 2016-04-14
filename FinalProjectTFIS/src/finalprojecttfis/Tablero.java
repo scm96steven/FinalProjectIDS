@@ -21,7 +21,7 @@ public class Tablero {
     
     void setTableText(){
         
-         
+         GUI.statusLabel.setText(Partida.status);
          GUI.set1_1.setText(String.valueOf(Partida.jugadores[0].score[0]));
           GUI.set2_1.setText(String.valueOf(Partida.jugadores[0].score[1]));
              GUI.set3_1.setText(String.valueOf(Partida.jugadores[0].score[2]));
