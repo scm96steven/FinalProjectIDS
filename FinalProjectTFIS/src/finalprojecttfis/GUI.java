@@ -5,6 +5,8 @@
  */
 package finalprojecttfis;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Scm96Steven
@@ -736,7 +738,7 @@ public class GUI extends javax.swing.JFrame {
             }
 
             System.out.println(currentGame.playerScore[currentGame.scoreIterator]);
-            listaHistorial.setVisible(true); 
+            listaJugadas.setVisible(true); 
             if (currentGame.playerScore[currentGame.scoreIterator] != 0 && currentGame.playerScore[currentGame.scoreIterator] != 40) {
                 currentGame.listData[currentGame.listIterator++] = (currentPlayer + ", " + currentPlay + ", Set:" + Integer.toString(currentGame.set + 1) + ", Score:" + Integer.toString(currentGame.playerScore[currentGame.scoreIterator]));
             }
@@ -746,7 +748,7 @@ public class GUI extends javax.swing.JFrame {
                 deuceWinner = false;
             }
 
-            listaHistorial.setListData(currentGame.listData); //Se actualiza el historial de jugadas con las nuevas jugadas.
+            listaJugadas.setListData(currentGame.listData); //Se actualiza el historial de jugadas con las nuevas jugadas.
 
             setTableText(); //Se actualizan los labels de la tabla de score.
 
@@ -761,6 +763,28 @@ public class GUI extends javax.swing.JFrame {
         }
         statusLabel.setText(currentGame.status); //Se actualiza el status al correspondiente segun lo que haya pasado en la jugada.
         setTableText();
+    }
+    
+     public void setTableText() {
+        //Sirve para setear el valor de la tabla de score correspondiente en cada label.
+
+        jLabel11.setText(String.valueOf(jugadores[0].score[0]));
+        jLabel12.setText(String.valueOf(jugadores[0].score[1]));
+        jLabel13.setText(String.valueOf(jugadores[0].score[2]));
+        jLabel14.setText(String.valueOf(currentGame.playerScore[0]));
+        jLabel15.setText(String.valueOf(jugadores[1].score[0]));
+        jLabel16.setText(String.valueOf(jugadores[1].score[1]));
+        jLabel17.setText(String.valueOf(jugadores[1].score[2]));
+        jLabel18.setText(String.valueOf(currentGameplayerScore[1]));
+        jLabel20.setText("");
+        jLabel21.setText("");
+        if (advanceArr[0] == 1) { 
+            jLabel20.setText("*");
+        }
+        if (advanceArr[1] == 1) {
+            jLabel21.setText("*");
+        }
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
