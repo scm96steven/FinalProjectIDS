@@ -590,7 +590,6 @@ public class GUI extends javax.swing.JFrame {
          currentGame.addPlay(playerIterator, currentPlay);
        currentGame.tabla.setTableText();
 
-       currentGame.addPlay(playerIterator, currentPlay);
     }//GEN-LAST:event_agregarJugadaActionPerformed
 
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
