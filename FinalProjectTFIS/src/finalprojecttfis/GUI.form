@@ -70,12 +70,16 @@
                                       <Component id="BotonJugada5" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="BotonJugada7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="BotonJugada6" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="BotonJugada8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="BotonJugador1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="BotonJugador2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="BotonJugada7" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="BotonJugada6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="BotonJugada8" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="BotonJugador1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="BotonJugador2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
                                           <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -148,8 +152,13 @@
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="set4_1" alignment="1" min="-2" pref="25" max="-2" attributes="0"/>
-                                              <Component id="set4_2" min="-2" pref="25" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="1" attributes="0">
+                                                      <Component id="set4_1" alignment="1" min="-2" pref="25" max="-2" attributes="0"/>
+                                                      <Component id="set4_2" min="-2" pref="25" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
                                           </Group>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" attributes="0">
@@ -582,7 +591,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Consolas" size="15" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="jLabel16"/>
+                    <Property name="text" type="java.lang.String" value="jLabel15"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="set2_2">
@@ -590,7 +599,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Consolas" size="15" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="jLabel17"/>
+                    <Property name="text" type="java.lang.String" value="jLabel16"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="set3_2">
@@ -598,7 +607,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Consolas" size="15" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="jLabel18"/>
+                    <Property name="text" type="java.lang.String" value="jLabel17"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="set4_2">
@@ -606,7 +615,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Consolas" size="15" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="jLabel19"/>
+                    <Property name="text" type="java.lang.String" value="jLabel17"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="set5_2">
@@ -614,7 +623,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Consolas" size="15" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="jLabel120"/>
+                    <Property name="text" type="java.lang.String" value="jLabel17"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="player2Label">
@@ -662,7 +671,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Consolas" size="15" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="jLabel14"/>
+                    <Property name="text" type="java.lang.String" value="jLabel13"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="set5_1">
@@ -670,7 +679,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Consolas" size="15" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="jLabel15"/>
+                    <Property name="text" type="java.lang.String" value="jLabel13"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="score_1">

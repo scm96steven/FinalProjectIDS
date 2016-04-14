@@ -249,19 +249,19 @@ public class GUI extends javax.swing.JFrame {
         score_2.setText("jLabel18");
 
         set1_2.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
-        set1_2.setText("jLabel16");
+        set1_2.setText("jLabel15");
 
         set2_2.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
-        set2_2.setText("jLabel17");
+        set2_2.setText("jLabel16");
 
         set3_2.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
-        set3_2.setText("jLabel18");
+        set3_2.setText("jLabel17");
 
         set4_2.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
-        set4_2.setText("jLabel19");
+        set4_2.setText("jLabel17");
 
         set5_2.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
-        set5_2.setText("jLabel120");
+        set5_2.setText("jLabel17");
 
         player2Label.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
         player2Label.setText("Jugador 2");
@@ -279,10 +279,10 @@ public class GUI extends javax.swing.JFrame {
         set3_1.setText("jLabel13");
 
         set4_1.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
-        set4_1.setText("jLabel14");
+        set4_1.setText("jLabel13");
 
         set5_1.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
-        set5_1.setText("jLabel15");
+        set5_1.setText("jLabel13");
 
         score_1.setFont(new java.awt.Font("Consolas", 0, 15)); // NOI18N
         score_1.setText("jLabel14");
@@ -329,12 +329,14 @@ public class GUI extends javax.swing.JFrame {
                             .addComponent(BotonJugada5)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(BotonJugada7)
-                                    .addComponent(BotonJugada6)
-                                    .addComponent(BotonJugada8)
-                                    .addComponent(BotonJugador1)
-                                    .addComponent(BotonJugador2)
-                                    .addComponent(jLabel3))
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(BotonJugada7)
+                                        .addComponent(BotonJugada6)
+                                        .addComponent(BotonJugada8))
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(BotonJugador1)
+                                        .addComponent(BotonJugador2)
+                                        .addComponent(jLabel3)))
                                 .addGap(134, 134, 134)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel27)
@@ -388,8 +390,11 @@ public class GUI extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(set4_1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(set4_2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(set4_1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(set4_2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING)
@@ -773,10 +778,10 @@ public class GUI extends javax.swing.JFrame {
         jLabel18.setText(String.valueOf(currentGameplayerScore[1]));
         jLabel20.setText("");
         jLabel21.setText("");
-        if (currentGame.advanceArr[0] == 1) { 
+        if (advanceArr[0] == 1) { 
             jLabel20.setText("*");
         }
-        if (currentGame.advanceArr[1] == 1) {
+        if (advanceArr[1] == 1) {
             jLabel21.setText("*");
         }
 
